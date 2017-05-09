@@ -1,0 +1,4 @@
+main_index:
+    path:     /
+    defaults: { _controller: "EnsJobeetBundle:Main:index" }
+    methods:  GET

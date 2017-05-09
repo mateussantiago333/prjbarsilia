@@ -1,0 +1,79 @@
+Ens\JobeetBundle\Entity\Estabelecimento:
+
+  type: entity
+
+  table: estabelecimento
+
+  id:
+
+    id:
+
+      type: integer
+
+      generator: { strategy: AUTO }
+
+  fields:
+
+    nome_estabelecimento:
+
+      type: string
+
+      length: 255
+
+    tipo_estabelecimento:
+
+      type: string
+
+      length: 255
+
+    endereco:
+
+      type: string
+
+      length: 255
+
+    dono:
+
+      type: integer
+
+      nullable: true
+
+    email:
+
+      type: string
+
+      length: 255
+
+    cnpj:
+
+      type: string
+
+      length: 255    
+
+    telefone:
+
+      type: string
+
+      length: 255
+
+    url_img:
+
+      type: string
+
+      length: 255
+
+    senha:
+
+      type: string
+
+    descricao:
+
+      type: text
+
+  oneToMany:
+
+    comentario:
+
+      targetEntity: Comentario
+
+      mappedBy: estabelecimentos

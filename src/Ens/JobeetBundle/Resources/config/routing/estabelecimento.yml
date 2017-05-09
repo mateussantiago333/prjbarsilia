@@ -1,0 +1,24 @@
+estabelecimento_index:
+    path:     /
+    defaults: { _controller: "EnsJobeetBundle:Estabelecimento:index" }
+    methods:  GET
+
+estabelecimento_show:
+    path:     /{id}/show
+    defaults: { _controller: "EnsJobeetBundle:Estabelecimento:show" }
+    methods:  GET
+
+estabelecimento_new:
+    path:     /new
+    defaults: { _controller: "EnsJobeetBundle:Estabelecimento:new" }
+    methods:  [GET, POST]
+
+estabelecimento_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EnsJobeetBundle:Estabelecimento:edit" }
+    methods:  [GET, POST]
+
+estabelecimento_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EnsJobeetBundle:Estabelecimento:delete" }
+    methods:  DELETE
