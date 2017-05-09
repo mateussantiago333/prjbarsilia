@@ -192,4 +192,3 @@ class Affiliate
         // Add your code here
     }
 }
-

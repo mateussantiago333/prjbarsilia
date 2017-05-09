@@ -1,3 +1,11 @@
+ens_jobeet_job:
+    resource: "@EnsJobeetBundle/Controller/JobController.php"
+    type:     annotation
+
+ens_jobeet_lucky:
+    resource: "@EnsJobeetBundle/Controller/LuckyController.php"
+    type:     annotation
+
 ens_jobeet:
     resource: "@EnsJobeetBundle/Resources/config/routing.yml"
     prefix:   /
