@@ -9,3 +9,8 @@ ens_jobeet_homepage:
 ens_jobeet_estabelecimento:
     resource: "@EnsJobeetBundle/Resources/config/routing/estabelecimento.yml"
     prefix:   /estabelecimento
+
+ens_jobeet_comentario:
+    resource: "@EnsJobeetBundle/Resources/config/routing/comentario.yml"
+    prefix:   /comentario
+
