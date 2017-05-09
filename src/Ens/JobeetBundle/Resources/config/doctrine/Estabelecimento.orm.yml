@@ -24,6 +24,7 @@ Ens\JobeetBundle\Entity\Estabelecimento:
       type: string
 
       length: 255
+      nullable: true
 
     tipo_estabelecimento:
 
@@ -38,8 +39,9 @@ Ens\JobeetBundle\Entity\Estabelecimento:
       length: 255
 
     dono:
+      type: string
 
-      type: integer
+      length: 255
 
       nullable: true
 
@@ -48,18 +50,21 @@ Ens\JobeetBundle\Entity\Estabelecimento:
       type: string
 
       length: 255
+      nullable: true
 
     cnpj:
 
       type: string
 
-      length: 255    
+      length: 255
+      nullable: true    
 
     telefone:
 
       type: string
 
       length: 255
+      nullable: true
 
     url_img:
 
@@ -70,6 +75,7 @@ Ens\JobeetBundle\Entity\Estabelecimento:
     senha:
 
       type: string
+      nullable: true
 
     descricao:
 

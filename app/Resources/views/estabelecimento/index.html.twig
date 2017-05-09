@@ -1,59 +1,75 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block body %}
-    <h1>Estabelecimentos list</h1>
+{% block content %}
+        <!--////////////////////////////////////Filter search bar/////-->
+            <div class="col-xs-8 col-xs-offset-2">
+                <form action="#" method="get" id="searchForm" class="input-group">
+                    
+                    <div class="input-group-btn search-panel">
+                        <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <option value="all">Cidade</option>
+                            <option value="asa_norte">Asa norte</option>
+                            <option value="asa_sul">Asa Sul</option>
+                            <option value="sobradinho">Sobradinho</option>
+                        </select>
+                        <select name="search_tipo" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <option value="all">Tipo de estabelecimento</option>
+                            <option value="bar">Bar</option>
+                            <option value="restaurante">Restaurante</option>
+                            <option value="buteco">Buteco</option>
+                        </select>
+                         <select name="search_nota" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <option value="all">Por notas</option>
+                            <option value="4">Maior que 4</option>
+                            <option value="3">Menor que 3</option>
+                            <option value="3_4">Entre 3 e 4</option>
+                        </select>
+                    </div>
+                    <input type="text" class="form-control" name="x" placeholder="Search term...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                           <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </form><!-- end form -->     
+            </div><!-- end col-xs-8 -->
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome_estabelecimento</th>
-                <th>Cidade</th>
-                <th>Tipo_estabelecimento</th>
-                <th>Endereco</th>
-                <th>Dono</th>
-                <th>Email</th>
-                <th>Cnpj</th>
-                <th>Telefone</th>
-                <th>Url_img</th>
-                <th>Senha</th>
-                <th>Descricao</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for estabelecimento in estabelecimentos %}
-            <tr>
-                <td><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.id }}</a></td>
-                <td>{{ estabelecimento.nomeestabelecimento }}</td>
-                <td>{{ estabelecimento.cidade }}</td>
-                <td>{{ estabelecimento.tipoestabelecimento }}</td>
-                <td>{{ estabelecimento.endereco }}</td>
-                <td>{{ estabelecimento.dono }}</td>
-                <td>{{ estabelecimento.email }}</td>
-                <td>{{ estabelecimento.cnpj }}</td>
-                <td>{{ estabelecimento.telefone }}</td>
-                <td>{{ estabelecimento.urlimg }}</td>
-                <td>{{ estabelecimento.senha }}</td>
-                <td>{{ estabelecimento.descricao }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('estabelecimento_edit', { 'id': estabelecimento.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('estabelecimento_new') }}">Create a new estabelecimento</a>
-        </li>
-    </ul>
+        <section id="container">
+
+            <div class="wrap-container">
+                <!-----------------Content-Box-------------------->
+                <article class="single-post zerogrid">
+                    <div class="row wrap-post"><!--Start Box-->
+                        <div class="entry-header">
+                            <h1 class="entry-title">Estabelecimentos cadastrados</h1>
+                        </div>
+                        <div class="entry-content">
+                            <div class="excerpt">
+                            <table>
+                            {% for estabelecimento in estabelecimentos %}
+                            <TR class = "list_bar_line">
+                                <TH class = "list_bar_title">
+                                      <figure class = "list_bar_figure">
+                                          <img class = "list_bar_icon" src="{{ estabelecimento.urlimg }}" alt="ICON" width="2000">
+                                    </figure>
+
+                                </TH>
+                                    <td class = "list_bar_column">
+                                    <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nomeestabelecimento }}</a></br>
+                                        <b>Nota média: </b> <h2>4.1</h2>
+                                        <b>Sobre:</b></br>
+                                            {{ estabelecimento.descricao }}</br>
+                                        </br>
+                                    </td>
+                                </TR>                               
+                            </TR>
+                            {% endfor %}
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
 {% endblock %}

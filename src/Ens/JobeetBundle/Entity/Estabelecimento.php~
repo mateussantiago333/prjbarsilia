@@ -20,12 +20,12 @@ class Estabelecimento
     /**
      * @var string
      */
-    private $tipo_estabelecimento;
+    private $cidade;
 
     /**
      * @var string
      */
-    private $cidade;
+    private $tipo_estabelecimento;
 
     /**
      * @var string
@@ -115,30 +115,6 @@ class Estabelecimento
     }
 
     /**
-     * Set tipoEstabelecimento
-     *
-     * @param string $tipoEstabelecimento
-     *
-     * @return Estabelecimento
-     */
-    public function setTipoEstabelecimento($tipoEstabelecimento)
-    {
-        $this->tipo_estabelecimento = $tipoEstabelecimento;
-
-        return $this;
-    }
-
-    /**
-     * Get tipoEstabelecimento
-     *
-     * @return string
-     */
-    public function getTipoEstabelecimento()
-    {
-        return $this->tipo_estabelecimento;
-    }
-
-    /**
      * Set cidade
      *
      * @param string $cidade
@@ -160,6 +136,30 @@ class Estabelecimento
     public function getCidade()
     {
         return $this->cidade;
+    }
+
+    /**
+     * Set tipoEstabelecimento
+     *
+     * @param string $tipoEstabelecimento
+     *
+     * @return Estabelecimento
+     */
+    public function setTipoEstabelecimento($tipoEstabelecimento)
+    {
+        $this->tipo_estabelecimento = $tipoEstabelecimento;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoEstabelecimento
+     *
+     * @return string
+     */
+    public function getTipoEstabelecimento()
+    {
+        return $this->tipo_estabelecimento;
     }
 
     /**
@@ -388,3 +388,4 @@ class Estabelecimento
         return $this->comentario;
     }
 }
+
