@@ -25,6 +25,11 @@ class Estabelecimento
     /**
      * @var string
      */
+    private $cidade;
+
+    /**
+     * @var string
+     */
     private $endereco;
 
     /**
@@ -131,6 +136,30 @@ class Estabelecimento
     public function getTipoEstabelecimento()
     {
         return $this->tipo_estabelecimento;
+    }
+
+    /**
+     * Set cidade
+     *
+     * @param string $cidade
+     *
+     * @return Estabelecimento
+     */
+    public function setCidade($cidade)
+    {
+        $this->cidade = $cidade;
+
+        return $this;
+    }
+
+    /**
+     * Get cidade
+     *
+     * @return string
+     */
+    public function getCidade()
+    {
+        return $this->cidade;
     }
 
     /**
@@ -359,4 +388,3 @@ class Estabelecimento
         return $this->comentario;
     }
 }
-

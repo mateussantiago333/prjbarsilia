@@ -1,16 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block body %}
-    <h1>Estabelecimento creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('estabelecimento_index') }}">Back to the list</a>
-        </li>
-    </ul>
+{% block content %}
+    <section id="container">
+        <div class="wrap-container">
+                <section class="content-box zerogrid">
+                    <div class="row wrap-box"><!--Start Box-->
+                    <div class="contact-form">
+                    <h3 class="t-center">Cadastro de estabelecimento</h3>
+                        <div class="wrap-col">
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <input type="submit" value="Cadastrar" />
+                        {{ form_end(form) }}
+                        </div>
+                    </div>
+                    </div>
+                </section>
+        </div>
+    </section>
 {% endblock %}

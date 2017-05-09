@@ -38,9 +38,9 @@ class Comentario
     private $type;
 
     /**
-     * @var string
+     * @var \Ens\JobeetBundle\Entity\Estabelecimento
      */
-    private $length;
+    private $estabalecimentos;
 
 
     /**
@@ -174,26 +174,26 @@ class Comentario
     }
 
     /**
-     * Set length
+     * Set estabalecimentos
      *
-     * @param string $length
+     * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabalecimentos
      *
      * @return Comentario
      */
-    public function setLength($length)
+    public function setEstabalecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabalecimentos = null)
     {
-        $this->length = $length;
+        $this->estabalecimentos = $estabalecimentos;
 
         return $this;
     }
 
     /**
-     * Get length
+     * Get estabalecimentos
      *
-     * @return string
+     * @return \Ens\JobeetBundle\Entity\Estabelecimento
      */
-    public function getLength()
+    public function getEstabalecimentos()
     {
-        return $this->length;
+        return $this->estabalecimentos;
     }
 }

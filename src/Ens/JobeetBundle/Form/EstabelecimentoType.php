@@ -13,7 +13,7 @@ class EstabelecimentoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nome_estabelecimento')->add('tipo_estabelecimento')->add('endereco')->add('dono')->add('email')->add('cnpj')->add('telefone')->add('url_img')->add('senha')->add('descricao');
+        $builder->add('nome_estabelecimento')->add('cidade')->add('tipo_estabelecimento')->add('endereco')->add('dono')->add('email')->add('cnpj')->add('telefone')->add('url_img')->add('senha')->add('descricao');
     }
     
     /**

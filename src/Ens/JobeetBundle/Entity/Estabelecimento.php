@@ -20,6 +20,11 @@ class Estabelecimento
     /**
      * @var string
      */
+    private $cidade;
+
+    /**
+     * @var string
+     */
     private $tipo_estabelecimento;
 
     /**
@@ -107,6 +112,30 @@ class Estabelecimento
     public function getNomeEstabelecimento()
     {
         return $this->nome_estabelecimento;
+    }
+
+    /**
+     * Set cidade
+     *
+     * @param string $cidade
+     *
+     * @return Estabelecimento
+     */
+    public function setCidade($cidade)
+    {
+        $this->cidade = $cidade;
+
+        return $this;
+    }
+
+    /**
+     * Get cidade
+     *
+     * @return string
+     */
+    public function getCidade()
+    {
+        return $this->cidade;
     }
 
     /**

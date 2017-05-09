@@ -20,6 +20,11 @@ Ens\JobeetBundle\Entity\Estabelecimento:
 
       length: 255
 
+    cidade:
+      type: string
+
+      length: 255
+
     tipo_estabelecimento:
 
       type: string
