@@ -1,49 +1,27 @@
 Ens\JobeetBundle\Entity\Comentario:
-
   type: entity
-
   table: comentario
-
   id:
-
     id:
-
       type: integer
-
       generator: { strategy: AUTO }
-
   fields:
-
-    nome_usuario:
-
+    autor:
       type: string
-
       length: 255
-
     nota:
-
       type: integer
-
     email:
-
       type: string
-
       length: 255
-
-    comentario:
-
-    type: text
+      nullable: true
+    texto_comentario:
+      type: text
 
   manyToOne:
-
     estabelecimentos:
-
       targetEntity: Estabelecimento
-
       inversedBy: comentario
-
       joinColumn:
-
         name: estabelecimento_id
-
         referencedColumnName: id

@@ -15,7 +15,7 @@ class Comentario
     /**
      * @var string
      */
-    private $nome_usuario;
+    private $autor;
 
     /**
      * @var integer
@@ -30,17 +30,12 @@ class Comentario
     /**
      * @var string
      */
-    private $comentario;
-
-    /**
-     * @var string
-     */
-    private $type;
+    private $texto_comentario;
 
     /**
      * @var \Ens\JobeetBundle\Entity\Estabelecimento
      */
-    private $estabalecimentos;
+    private $estabelecimentos;
 
 
     /**
@@ -54,27 +49,27 @@ class Comentario
     }
 
     /**
-     * Set nomeUsuario
+     * Set autor
      *
-     * @param string $nomeUsuario
+     * @param string $autor
      *
      * @return Comentario
      */
-    public function setNomeUsuario($nomeUsuario)
+    public function setAutor($autor)
     {
-        $this->nome_usuario = $nomeUsuario;
+        $this->autor = $autor;
 
         return $this;
     }
 
     /**
-     * Get nomeUsuario
+     * Get autor
      *
      * @return string
      */
-    public function getNomeUsuario()
+    public function getAutor()
     {
-        return $this->nome_usuario;
+        return $this->autor;
     }
 
     /**
@@ -126,81 +121,28 @@ class Comentario
     }
 
     /**
-     * Set comentario
+     * Set textoComentario
      *
-     * @param string $comentario
+     * @param string $textoComentario
      *
      * @return Comentario
      */
-    public function setComentario($comentario)
+    public function setTextoComentario($textoComentario)
     {
-        $this->comentario = $comentario;
+        $this->texto_comentario = $textoComentario;
 
         return $this;
     }
 
     /**
-     * Get comentario
+     * Get textoComentario
      *
      * @return string
      */
-    public function getComentario()
+    public function getTextoComentario()
     {
-        return $this->comentario;
+        return $this->texto_comentario;
     }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Comentario
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set estabalecimentos
-     *
-     * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabalecimentos
-     *
-     * @return Comentario
-     */
-    public function setEstabalecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabalecimentos = null)
-    {
-        $this->estabalecimentos = $estabalecimentos;
-
-        return $this;
-    }
-
-    /**
-     * Get estabalecimentos
-     *
-     * @return \Ens\JobeetBundle\Entity\Estabelecimento
-     */
-    public function getEstabalecimentos()
-    {
-        return $this->estabalecimentos;
-    }
-    /**
-     * @var \Ens\JobeetBundle\Entity\Estabelecimento
-     */
-    private $estabelecimentos;
-
 
     /**
      * Set estabelecimentos

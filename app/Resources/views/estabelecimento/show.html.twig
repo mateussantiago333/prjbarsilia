@@ -1,60 +1,49 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Estabelecimento</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ estabelecimento.id }}</td>
-            </tr>
-            <tr>
-                <th>Nome_estabelecimento</th>
-                <td>{{ estabelecimento.nomeestabelecimento }}</td>
-            </tr>
-            <tr>
-                <th>Cidade</th>
-                <td>{{ estabelecimento.cidade }}</td>
-            </tr>
-            <tr>
-                <th>Tipo_estabelecimento</th>
-                <td>{{ estabelecimento.tipoestabelecimento }}</td>
-            </tr>
-            <tr>
-                <th>Endereco</th>
-                <td>{{ estabelecimento.endereco }}</td>
-            </tr>
-            <tr>
-                <th>Dono</th>
-                <td>{{ estabelecimento.dono }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ estabelecimento.email }}</td>
-            </tr>
-            <tr>
-                <th>Cnpj</th>
-                <td>{{ estabelecimento.cnpj }}</td>
-            </tr>
-            <tr>
-                <th>Telefone</th>
-                <td>{{ estabelecimento.telefone }}</td>
-            </tr>
-            <tr>
-                <th>Url_img</th>
-                <td>{{ estabelecimento.urlimg }}</td>
-            </tr>
-            <tr>
-                <th>Senha</th>
-                <td>{{ estabelecimento.senha }}</td>
-            </tr>
-            <tr>
-                <th>Descricao</th>
-                <td>{{ estabelecimento.descricao }}</td>
-            </tr>
-        </tbody>
-    </table>
+<section id="container">
+    <div class="wrap-container">
+    <!-----------------Content-Box-------------------->
+    <article class="single-post zerogrid">
+        <div class="row wrap-post"><!--Start Box-->
+        <div class="entry-header">
+            <h1>{{ estabelecimento.nomeestabelecimento }}</h1>
+            <img src="{{ estabelecimento.urlimg }}" id = "bar_img" class="img-responsive" alt="">
+        </div>
+    <div class="entry-content">
+        <div class="excerpt">
+            
+                <h2>Endereco</h2>
+                <p>{{ estabelecimento.endereco }}</p>
+            
+            
+                <h2>Cidade</h2>
+                <p>{{ estabelecimento.cidade }}</p>
+            
+            
+                <h2>Tipo_estabelecimento</h2>
+                <p>{{ estabelecimento.tipoestabelecimento }}</p>
+            
+            
+                <h2>Endereco</h2>
+                <p>{{ estabelecimento.endereco }}</p>
+            
+            
+                <h2>Email</h2>
+                <p>{{ estabelecimento.email }}</p>
+            
+            
+                <h2>Cnpj</h2>
+                <p>{{ estabelecimento.cnpj }}</p>
+            
+            
+                <h2>Telefone</h2>
+                <p>{{ estabelecimento.telefone }}</p>
+            
+            
+                <h2>Descricao</h2>
+                <p>{{ estabelecimento.descricao }}</p>
+            
 
     <ul>
         <li>
@@ -69,4 +58,9 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    </div>
+    </div>
+    </article>
+    </div>
+</section>
 {% endblock %}

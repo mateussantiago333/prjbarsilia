@@ -20,11 +20,6 @@ class Estabelecimento
     /**
      * @var string
      */
-    private $cidade;
-
-    /**
-     * @var string
-     */
     private $tipo_estabelecimento;
 
     /**
@@ -33,9 +28,9 @@ class Estabelecimento
     private $endereco;
 
     /**
-     * @var integer
+     * @var string
      */
-    private $dono;
+    private $cidade;
 
     /**
      * @var string
@@ -56,11 +51,6 @@ class Estabelecimento
      * @var string
      */
     private $url_img;
-
-    /**
-     * @var string
-     */
-    private $senha;
 
     /**
      * @var string
@@ -115,30 +105,6 @@ class Estabelecimento
     }
 
     /**
-     * Set cidade
-     *
-     * @param string $cidade
-     *
-     * @return Estabelecimento
-     */
-    public function setCidade($cidade)
-    {
-        $this->cidade = $cidade;
-
-        return $this;
-    }
-
-    /**
-     * Get cidade
-     *
-     * @return string
-     */
-    public function getCidade()
-    {
-        return $this->cidade;
-    }
-
-    /**
      * Set tipoEstabelecimento
      *
      * @param string $tipoEstabelecimento
@@ -187,27 +153,27 @@ class Estabelecimento
     }
 
     /**
-     * Set dono
+     * Set cidade
      *
-     * @param integer $dono
+     * @param string $cidade
      *
      * @return Estabelecimento
      */
-    public function setDono($dono)
+    public function setCidade($cidade)
     {
-        $this->dono = $dono;
+        $this->cidade = $cidade;
 
         return $this;
     }
 
     /**
-     * Get dono
+     * Get cidade
      *
-     * @return integer
+     * @return string
      */
-    public function getDono()
+    public function getCidade()
     {
-        return $this->dono;
+        return $this->cidade;
     }
 
     /**
@@ -304,30 +270,6 @@ class Estabelecimento
     public function getUrlImg()
     {
         return $this->url_img;
-    }
-
-    /**
-     * Set senha
-     *
-     * @param string $senha
-     *
-     * @return Estabelecimento
-     */
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
-
-        return $this;
-    }
-
-    /**
-     * Get senha
-     *
-     * @return string
-     */
-    public function getSenha()
-    {
-        return $this->senha;
     }
 
     /**

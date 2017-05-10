@@ -7,11 +7,10 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nome_usuario</th>
+                <th>Autor</th>
                 <th>Nota</th>
                 <th>Email</th>
-                <th>Comentario</th>
-                <th>Type</th>
+                <th>Texto_comentario</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,11 +18,10 @@
         {% for comentario in comentarios %}
             <tr>
                 <td><a href="{{ path('comentario_show', { 'id': comentario.id }) }}">{{ comentario.id }}</a></td>
-                <td>{{ comentario.nomeusuario }}</td>
+                <td>{{ comentario.autor }}</td>
                 <td>{{ comentario.nota }}</td>
                 <td>{{ comentario.email }}</td>
-                <td>{{ comentario.comentario }}</td>
-                <td>{{ comentario.type }}</td>
+                <td>{{ comentario.textocomentario }}</td>
                 <td>
                     <ul>
                         <li>

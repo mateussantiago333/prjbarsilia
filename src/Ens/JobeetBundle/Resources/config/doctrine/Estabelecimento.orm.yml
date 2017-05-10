@@ -1,90 +1,49 @@
 Ens\JobeetBundle\Entity\Estabelecimento:
-
   type: entity
-
   table: estabelecimento
-
   id:
-
     id:
-
       type: integer
-
       generator: { strategy: AUTO }
-
   fields:
-
     nome_estabelecimento:
-
       type: string
+      length: 255
 
+    tipo_estabelecimento:
+      type: string
+      length: 255
+
+    endereco:
+      type: string
       length: 255
 
     cidade:
       type: string
-
       length: 255
-      nullable: true
-
-    tipo_estabelecimento:
-
-      type: string
-
-      length: 255
-
-    endereco:
-
-      type: string
-
-      length: 255
-
-    dono:
-      type: string
-
-      length: 255
-
-      nullable: true
 
     email:
-
       type: string
-
       length: 255
       nullable: true
 
     cnpj:
-
       type: string
-
       length: 255
-      nullable: true    
+      nullable: true
 
     telefone:
-
       type: string
-
       length: 255
-      nullable: true
 
     url_img:
-
       type: string
-
       length: 255
 
-    senha:
-
-      type: string
-      nullable: true
-
     descricao:
-
       type: text
 
   oneToMany:
-
     comentario:
-
       targetEntity: Comentario
-
       mappedBy: estabelecimentos
