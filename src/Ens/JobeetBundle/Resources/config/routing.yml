@@ -1,16 +1,15 @@
-ens_jobeet_main:
-    resource: "@EnsJobeetBundle/Resources/config/routing/main.yml"
-    prefix:   /main
-
 ens_jobeet_homepage:
     path:     /
     defaults: { _controller: EnsJobeetBundle:Default:index }
 
+ens_jobeet_main:
+    resource: "@EnsJobeetBundle/Resources/config/routing/main.yml"
+    prefix:   /main
+    
 ens_jobeet_estabelecimento:
     resource: "@EnsJobeetBundle/Resources/config/routing/estabelecimento.yml"
     prefix:   /estabelecimento
-
+    
 ens_jobeet_comentario:
     resource: "@EnsJobeetBundle/Resources/config/routing/comentario.yml"
     prefix:   /comentario
-
