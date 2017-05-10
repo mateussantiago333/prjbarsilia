@@ -1,5 +1,5 @@
 estabelecimento_index:
-    path:     /index
+    path:     /teste
     defaults: { _controller: "EnsJobeetBundle:Estabelecimento:index" }
     methods:  GET
 
