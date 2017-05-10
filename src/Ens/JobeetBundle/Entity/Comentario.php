@@ -196,4 +196,33 @@ class Comentario
     {
         return $this->estabalecimentos;
     }
+    /**
+     * @var \Ens\JobeetBundle\Entity\Estabelecimento
+     */
+    private $estabelecimentos;
+
+
+    /**
+     * Set estabelecimentos
+     *
+     * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos
+     *
+     * @return Comentario
+     */
+    public function setEstabelecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos = null)
+    {
+        $this->estabelecimentos = $estabelecimentos;
+
+        return $this;
+    }
+
+    /**
+     * Get estabelecimentos
+     *
+     * @return \Ens\JobeetBundle\Entity\Estabelecimento
+     */
+    public function getEstabelecimentos()
+    {
+        return $this->estabelecimentos;
+    }
 }

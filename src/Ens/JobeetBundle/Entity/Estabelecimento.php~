@@ -388,4 +388,3 @@ class Estabelecimento
         return $this->comentario;
     }
 }
-

@@ -36,7 +36,7 @@ Ens\JobeetBundle\Entity\Comentario:
 
   manyToOne:
 
-    estabalecimentos:
+    estabelecimentos:
 
       targetEntity: Estabelecimento
 
