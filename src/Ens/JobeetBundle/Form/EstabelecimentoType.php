@@ -13,7 +13,15 @@ class EstabelecimentoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nome_estabelecimento')->add('tipo_estabelecimento')->add('endereco')->add('cidade')->add('email')->add('cnpj')->add('telefone')->add('url_img')->add('descricao');
+        $builder->add('nome_estabelecimento');
+        $builder->add('tipo_estabelecimento');
+        $builder->add('endereco');
+        $builder->add('cidade');
+        $builder->add('email');
+        $builder->add('cnpj');
+        $builder->add('telefone');
+        $builder->add('url_img');
+        $builder->add('descricao');
     }
     
     /**
@@ -32,6 +40,12 @@ class EstabelecimentoType extends AbstractType
     public function getBlockPrefix()
     {
         return 'ens_jobeetbundle_estabelecimento';
+    }
+
+    
+    public function getName()
+    {
+        return 'ens_jobeetbundle_estabelecimentotype';
     }
 
 

@@ -13,7 +13,11 @@ class ComentarioType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('autor')->add('nota')->add('email')->add('texto_comentario')->add('estabelecimentos');
+        $builder->add('autor');
+        $builder->add('nota');
+        $builder->add('email');
+        $builder->add('texto_comentario');
+        $builder->add('estabelecimentos');
     }
     
     /**
@@ -32,6 +36,11 @@ class ComentarioType extends AbstractType
     public function getBlockPrefix()
     {
         return 'ens_jobeetbundle_comentario';
+    }
+
+    public function getName()
+    {
+        return 'ens_jobeetbundle_comentariotype';
     }
 
 
