@@ -42,11 +42,5 @@ class EstabelecimentoType extends AbstractType
         return 'ens_jobeetbundle_estabelecimento';
     }
 
-    
-    public function getName()
-    {
-        return 'ens_jobeetbundle_estabelecimentotype';
-    }
-
 
 }

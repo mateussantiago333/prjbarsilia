@@ -168,3 +168,4 @@ class Comentario
         return $this->estabelecimentos;
     }
 }
+

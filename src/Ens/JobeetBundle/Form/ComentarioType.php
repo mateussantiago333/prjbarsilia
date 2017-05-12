@@ -3,6 +3,7 @@
 namespace Ens\JobeetBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +18,9 @@ class ComentarioType extends AbstractType
         $builder->add('nota');
         $builder->add('email');
         $builder->add('texto_comentario');
-        $builder->add('estabelecimentos');
+        $builder->add('estabelecimentos',EntityType::class, array(
+            'class' => 'EnsJobeetBundle:Estabelecimento',
+            'choice_label' => 'nome_estabelecimento'));
     }
     
     /**
@@ -36,11 +39,6 @@ class ComentarioType extends AbstractType
     public function getBlockPrefix()
     {
         return 'ens_jobeetbundle_comentario';
-    }
-
-    public function getName()
-    {
-        return 'ens_jobeetbundle_comentariotype';
     }
 
 

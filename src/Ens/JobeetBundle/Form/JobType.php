@@ -24,7 +24,7 @@ class JobType extends AbstractType
         $builder->add('token');
         $builder->add('is_public');
         $builder->add('is_activated');
-        $builder->add('email')
+        $builder->add('email');
         $builder->add('expires_at');
         $builder->add('created_at');
         $builder->add('updated_at');
