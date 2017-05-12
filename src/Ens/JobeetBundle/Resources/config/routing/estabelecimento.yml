@@ -6,7 +6,7 @@ estabelecimento_index:
 estabelecimento_show:
     path:     /{id}/show
     defaults: { _controller: "EnsJobeetBundle:Estabelecimento:show" }
-    methods:  GET
+    methods:  [GET, POST]
 
 estabelecimento_new:
     path:     /new

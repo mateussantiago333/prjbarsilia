@@ -43,8 +43,15 @@
             
                 <h2>Descricao</h2>
                 <p>{{ estabelecimento.descricao }}</p>
-            
 
+                <div id="test">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Create" />
+                    {{ form_end(form) }}
+                </div>
+            
+<!--
     <ul>
         <li>
             <a href="{{ path('estabelecimento_index') }}">Back to the list</a>
@@ -57,7 +64,7 @@
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    </ul> -->
     </div>
     </div>
     </article>

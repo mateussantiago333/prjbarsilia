@@ -1,7 +1,7 @@
 <?php
 
 namespace Ens\JobeetBundle\Controller;
-
+use Ens\JobeetBundle\Entity\Comentario;
 use Ens\JobeetBundle\Entity\Estabelecimento;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -55,12 +55,26 @@ class EstabelecimentoController extends Controller
      * Finds and displays a estabelecimento entity.
      *
      */
-    public function showAction(Estabelecimento $estabelecimento)
+    public function showAction(Request $request,Estabelecimento $estabelecimento)
     {
         $deleteForm = $this->createDeleteForm($estabelecimento);
 
+        $comentario = new Comentario();
+        $form = $this->createForm('Ens\JobeetBundle\Form\ComentarioType', $comentario);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comentario);
+            $em->flush();
+
+            return $this->redirectToRoute('estabelecimento_show', array('id' => $estabelecimento->getId()));
+        }
+
         return $this->render('estabelecimento/show.html.twig', array(
             'estabelecimento' => $estabelecimento,
+            'comentario' => $comentario,
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
