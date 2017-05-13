@@ -61,6 +61,7 @@ class EstabelecimentoController extends Controller
 
         $comentario = new Comentario();
         $form = $this->createForm('Ens\JobeetBundle\Form\ComentarioType', $comentario);
+        $comentario->setEstabelecimentos($estabelecimento);
         //$form->get('estabelecimentos')->setData($estabelecimento->getId());
         $form->handleRequest($request);
 

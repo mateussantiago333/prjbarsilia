@@ -20,9 +20,9 @@ class ComentarioType extends AbstractType
         $builder->add('email');
         $builder->add('texto_comentario');
         /*$builder->add('estabelecimentos',HiddenType::class);*/
-        $builder->add('estabelecimentos',EntityType::class, array(
+        /*$builder->add('estabelecimentos',EntityType::class, array(
             'class' => 'EnsJobeetBundle:Estabelecimento',
-            'choice_label' => 'nome_estabelecimento'));
+            'choice_label' => 'nome_estabelecimento'));*/
     }
     
     /**
