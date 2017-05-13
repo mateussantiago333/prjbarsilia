@@ -1,0 +1,8 @@
+git clone https://github.com/mateussantiago333/prjbarsilia.git
+composer install
+mkdir var/data
+php bin/console doctrine:database:create
+php bin/console doctrine:generate:entities EnsJobeetBundle
+php bin/consoledoctrine:schema:update --force
+php bin/console :run
+
