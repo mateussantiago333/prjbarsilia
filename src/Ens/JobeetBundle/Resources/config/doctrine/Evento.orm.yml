@@ -1,0 +1,29 @@
+Ens\JobeetBundle\Entity\Evento:
+  type: entity
+  table: evento
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    nome_evento:
+      type: string
+      length: 255
+    img_evento:
+      type: string
+      length: 255
+      nullable: true
+    descricao_evento:
+      type: text
+
+  manyToOne:
+    estabelecimentos:
+      targetEntity: Estabelecimento
+      inversedBy: evento
+      joinColumn:
+        name: estabelecimento_id
+        referencedColumnName: id
+  oneToMany:
+    comentario_evento:
+      targetEntity: Comentario_Evento
+      mappedBy: eventos

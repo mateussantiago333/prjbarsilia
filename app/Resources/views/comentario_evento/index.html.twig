@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comentario_eventos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Autor</th>
+                <th>Nota</th>
+                <th>Email</th>
+                <th>Texto_comentario</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comentario_Evento in comentario_Eventos %}
+            <tr>
+                <td><a href="{{ path('comentario_evento_show', { 'id': comentario_Evento.id }) }}">{{ comentario_Evento.id }}</a></td>
+                <td>{{ comentario_Evento.autor }}</td>
+                <td>{{ comentario_Evento.nota }}</td>
+                <td>{{ comentario_Evento.email }}</td>
+                <td>{{ comentario_Evento.textocomentario }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('comentario_evento_show', { 'id': comentario_Evento.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('comentario_evento_edit', { 'id': comentario_Evento.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comentario_evento_new') }}">Create a new comentario_Evento</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -47,3 +47,7 @@ Ens\JobeetBundle\Entity\Estabelecimento:
     comentario:
       targetEntity: Comentario
       mappedBy: estabelecimentos
+  oneToMany:
+    evento:
+      targetEntity: Evento
+      mappedBy: estabelecimentos

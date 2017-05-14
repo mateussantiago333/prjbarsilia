@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comentario_evento</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ comentario_Evento.id }}</td>
+            </tr>
+            <tr>
+                <th>Autor</th>
+                <td>{{ comentario_Evento.autor }}</td>
+            </tr>
+            <tr>
+                <th>Nota</th>
+                <td>{{ comentario_Evento.nota }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ comentario_Evento.email }}</td>
+            </tr>
+            <tr>
+                <th>Texto_comentario</th>
+                <td>{{ comentario_Evento.textocomentario }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comentario_evento_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('comentario_evento_edit', { 'id': comentario_Evento.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

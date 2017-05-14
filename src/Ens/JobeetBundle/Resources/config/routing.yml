@@ -13,3 +13,14 @@ ens_jobeet_estabelecimento:
 ens_jobeet_comentario:
     resource: "@EnsJobeetBundle/Resources/config/routing/comentario.yml"
     prefix:   /comentario
+
+ens_jobeet_evento:
+    resource: "@EnsJobeetBundle/Resources/config/routing/evento.yml"
+    prefix:   /evento
+
+ens_jobeet_comentario_evento:
+        resource: "@EnsJobeetBundle/Resources/config/routing/comentario_evento.yml"
+        prefix:   /comentario_evento
+
+
+

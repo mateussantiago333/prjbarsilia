@@ -1,0 +1,27 @@
+Ens\JobeetBundle\Entity\Comentario_Evento:
+  type: entity
+  table: comentario_evento
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    autor:
+      type: string
+      length: 255
+    nota:
+      type: integer
+    email:
+      type: string
+      length: 255
+      nullable: true
+    texto_comentario:
+      type: text
+
+  manyToOne:
+    eventos:
+      targetEntity: Evento
+      inversedBy: comentario_evento
+      joinColumn:
+        name: evento_id
+        referencedColumnName: id

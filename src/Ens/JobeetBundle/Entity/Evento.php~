@@ -3,9 +3,9 @@
 namespace Ens\JobeetBundle\Entity;
 
 /**
- * Comentario
+ * Evento
  */
-class Comentario
+class Evento
 {
     /**
      * @var integer
@@ -15,22 +15,17 @@ class Comentario
     /**
      * @var string
      */
-    private $autor;
-
-    /**
-     * @var integer
-     */
-    private $nota;
+    private $nome_evento;
 
     /**
      * @var string
      */
-    private $email;
+    private $img_evento;
 
     /**
      * @var string
      */
-    private $texto_comentario;
+    private $descricao_evento;
 
     /**
      * @var \Ens\JobeetBundle\Entity\Estabelecimento
@@ -49,99 +44,75 @@ class Comentario
     }
 
     /**
-     * Set autor
+     * Set nomeEvento
      *
-     * @param string $autor
+     * @param string $nomeEvento
      *
-     * @return Comentario
+     * @return Evento
      */
-    public function setAutor($autor)
+    public function setNomeEvento($nomeEvento)
     {
-        $this->autor = $autor;
+        $this->nome_evento = $nomeEvento;
 
         return $this;
     }
 
     /**
-     * Get autor
+     * Get nomeEvento
      *
      * @return string
      */
-    public function getAutor()
+    public function getNomeEvento()
     {
-        return $this->autor;
+        return $this->nome_evento;
     }
 
     /**
-     * Set nota
+     * Set imgEvento
      *
-     * @param integer $nota
+     * @param string $imgEvento
      *
-     * @return Comentario
+     * @return Evento
      */
-    public function setNota($nota)
+    public function setImgEvento($imgEvento)
     {
-        $this->nota = $nota;
+        $this->img_evento = $imgEvento;
 
         return $this;
     }
 
     /**
-     * Get nota
-     *
-     * @return integer
-     */
-    public function getNota()
-    {
-        return $this->nota;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Comentario
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
+     * Get imgEvento
      *
      * @return string
      */
-    public function getEmail()
+    public function getImgEvento()
     {
-        return $this->email;
+        return $this->img_evento;
     }
 
     /**
-     * Set textoComentario
+     * Set descricaoEvento
      *
-     * @param string $textoComentario
+     * @param string $descricaoEvento
      *
-     * @return Comentario
+     * @return Evento
      */
-    public function setTextoComentario($textoComentario)
+    public function setDescricaoEvento($descricaoEvento)
     {
-        $this->texto_comentario = $textoComentario;
+        $this->descricao_evento = $descricaoEvento;
 
         return $this;
     }
 
     /**
-     * Get textoComentario
+     * Get descricaoEvento
      *
      * @return string
      */
-    public function getTextoComentario()
+    public function getDescricaoEvento()
     {
-        return $this->texto_comentario;
+        return $this->descricao_evento;
     }
 
     /**
@@ -149,7 +120,7 @@ class Comentario
      *
      * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos
      *
-     * @return Comentario
+     * @return Evento
      */
     public function setEstabelecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos = null)
     {
@@ -168,3 +139,4 @@ class Comentario
         return $this->estabelecimentos;
     }
 }
+

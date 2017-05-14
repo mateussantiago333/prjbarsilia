@@ -3,9 +3,9 @@
 namespace Ens\JobeetBundle\Entity;
 
 /**
- * Comentario
+ * Comentario_Evento
  */
-class Comentario
+class Comentario_Evento
 {
     /**
      * @var integer
@@ -33,9 +33,9 @@ class Comentario
     private $texto_comentario;
 
     /**
-     * @var \Ens\JobeetBundle\Entity\Estabelecimento
+     * @var \Ens\JobeetBundle\Entity\Evento
      */
-    private $estabelecimentos;
+    private $eventos;
 
 
     /**
@@ -53,7 +53,7 @@ class Comentario
      *
      * @param string $autor
      *
-     * @return Comentario
+     * @return Comentario_Evento
      */
     public function setAutor($autor)
     {
@@ -77,7 +77,7 @@ class Comentario
      *
      * @param integer $nota
      *
-     * @return Comentario
+     * @return Comentario_Evento
      */
     public function setNota($nota)
     {
@@ -101,7 +101,7 @@ class Comentario
      *
      * @param string $email
      *
-     * @return Comentario
+     * @return Comentario_Evento
      */
     public function setEmail($email)
     {
@@ -125,7 +125,7 @@ class Comentario
      *
      * @param string $textoComentario
      *
-     * @return Comentario
+     * @return Comentario_Evento
      */
     public function setTextoComentario($textoComentario)
     {
@@ -145,26 +145,27 @@ class Comentario
     }
 
     /**
-     * Set estabelecimentos
+     * Set eventos
      *
-     * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos
+     * @param \Ens\JobeetBundle\Entity\Evento $eventos
      *
-     * @return Comentario
+     * @return Comentario_Evento
      */
-    public function setEstabelecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos = null)
+    public function setEventos(\Ens\JobeetBundle\Entity\Evento $eventos = null)
     {
-        $this->estabelecimentos = $estabelecimentos;
+        $this->eventos = $eventos;
 
         return $this;
     }
 
     /**
-     * Get estabelecimentos
+     * Get eventos
      *
-     * @return \Ens\JobeetBundle\Entity\Estabelecimento
+     * @return \Ens\JobeetBundle\Entity\Evento
      */
-    public function getEstabelecimentos()
+    public function getEventos()
     {
-        return $this->estabelecimentos;
+        return $this->eventos;
     }
 }
+
