@@ -274,9 +274,12 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
-  #estabelecimento{
+#estabelecimento{
     margin-top: -10px;
-  }
+}
+#evento{
+    margin-top: -10px;
+}
 #cadastro{
   margin-left: 200px;
 }

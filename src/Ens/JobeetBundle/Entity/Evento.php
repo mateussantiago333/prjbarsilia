@@ -23,15 +23,32 @@ class Evento
     private $img_evento;
 
     /**
+     * @var \DateTime
+     */
+    private $data_evento;
+
+    /**
      * @var string
      */
     private $descricao_evento;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $comentario_evento;
 
     /**
      * @var \Ens\JobeetBundle\Entity\Estabelecimento
      */
     private $estabelecimentos;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comentario_evento = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -92,6 +109,30 @@ class Evento
     }
 
     /**
+     * Set dataEvento
+     *
+     * @param \DateTime $dataEvento
+     *
+     * @return Evento
+     */
+    public function setDataEvento($dataEvento)
+    {
+        $this->data_evento = $dataEvento;
+
+        return $this;
+    }
+
+    /**
+     * Get dataEvento
+     *
+     * @return \DateTime
+     */
+    public function getDataEvento()
+    {
+        return $this->data_evento;
+    }
+
+    /**
      * Set descricaoEvento
      *
      * @param string $descricaoEvento
@@ -113,42 +154,6 @@ class Evento
     public function getDescricaoEvento()
     {
         return $this->descricao_evento;
-    }
-
-    /**
-     * Set estabelecimentos
-     *
-     * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos
-     *
-     * @return Evento
-     */
-    public function setEstabelecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos = null)
-    {
-        $this->estabelecimentos = $estabelecimentos;
-
-        return $this;
-    }
-
-    /**
-     * Get estabelecimentos
-     *
-     * @return \Ens\JobeetBundle\Entity\Estabelecimento
-     */
-    public function getEstabelecimentos()
-    {
-        return $this->estabelecimentos;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $comentario_evento;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comentario_evento = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -183,5 +188,29 @@ class Evento
     public function getComentarioEvento()
     {
         return $this->comentario_evento;
+    }
+
+    /**
+     * Set estabelecimentos
+     *
+     * @param \Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos
+     *
+     * @return Evento
+     */
+    public function setEstabelecimentos(\Ens\JobeetBundle\Entity\Estabelecimento $estabelecimentos = null)
+    {
+        $this->estabelecimentos = $estabelecimentos;
+
+        return $this;
+    }
+
+    /**
+     * Get estabelecimentos
+     *
+     * @return \Ens\JobeetBundle\Entity\Estabelecimento
+     */
+    public function getEstabelecimentos()
+    {
+        return $this->estabelecimentos;
     }
 }

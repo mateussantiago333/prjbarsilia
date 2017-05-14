@@ -23,15 +23,32 @@ class Evento
     private $img_evento;
 
     /**
+     * @var \DateTime
+     */
+    private $data_evento;
+
+    /**
      * @var string
      */
     private $descricao_evento;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $comentario_evento;
 
     /**
      * @var \Ens\JobeetBundle\Entity\Estabelecimento
      */
     private $estabelecimentos;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comentario_evento = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -92,6 +109,30 @@ class Evento
     }
 
     /**
+     * Set dataEvento
+     *
+     * @param \DateTime $dataEvento
+     *
+     * @return Evento
+     */
+    public function setDataEvento($dataEvento)
+    {
+        $this->data_evento = $dataEvento;
+
+        return $this;
+    }
+
+    /**
+     * Get dataEvento
+     *
+     * @return \DateTime
+     */
+    public function getDataEvento()
+    {
+        return $this->data_evento;
+    }
+
+    /**
      * Set descricaoEvento
      *
      * @param string $descricaoEvento
@@ -113,6 +154,40 @@ class Evento
     public function getDescricaoEvento()
     {
         return $this->descricao_evento;
+    }
+
+    /**
+     * Add comentarioEvento
+     *
+     * @param \Ens\JobeetBundle\Entity\Comentario_Evento $comentarioEvento
+     *
+     * @return Evento
+     */
+    public function addComentarioEvento(\Ens\JobeetBundle\Entity\Comentario_Evento $comentarioEvento)
+    {
+        $this->comentario_evento[] = $comentarioEvento;
+
+        return $this;
+    }
+
+    /**
+     * Remove comentarioEvento
+     *
+     * @param \Ens\JobeetBundle\Entity\Comentario_Evento $comentarioEvento
+     */
+    public function removeComentarioEvento(\Ens\JobeetBundle\Entity\Comentario_Evento $comentarioEvento)
+    {
+        $this->comentario_evento->removeElement($comentarioEvento);
+    }
+
+    /**
+     * Get comentarioEvento
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComentarioEvento()
+    {
+        return $this->comentario_evento;
     }
 
     /**

@@ -168,3 +168,4 @@ class Comentario_Evento
         return $this->eventos;
     }
 }
+

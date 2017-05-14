@@ -18,6 +18,10 @@
                 <td>{{ evento.imgevento }}</td>
             </tr>
             <tr>
+                <th>Data_evento</th>
+                <td>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
                 <th>Descricao_evento</th>
                 <td>{{ evento.descricaoevento }}</td>
             </tr>

@@ -9,6 +9,7 @@
                 <th>Id</th>
                 <th>Nome_evento</th>
                 <th>Img_evento</th>
+                <th>Data_evento</th>
                 <th>Descricao_evento</th>
                 <th>Actions</th>
             </tr>
@@ -19,6 +20,7 @@
                 <td><a href="{{ path('evento_show', { 'id': evento.id }) }}">{{ evento.id }}</a></td>
                 <td>{{ evento.nomeevento }}</td>
                 <td>{{ evento.imgevento }}</td>
+                <td>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ evento.descricaoevento }}</td>
                 <td>
                     <ul>

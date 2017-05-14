@@ -13,16 +13,18 @@ Ens\JobeetBundle\Entity\Evento:
       type: string
       length: 255
       nullable: true
+    data_evento:
+      type: datetime
     descricao_evento:
       type: text
 
   manyToOne:
     estabelecimentos:
       targetEntity: Estabelecimento
-      inversedBy: evento
       joinColumn:
         name: estabelecimento_id
         referencedColumnName: id
+
   oneToMany:
     comentario_evento:
       targetEntity: Comentario_Evento
