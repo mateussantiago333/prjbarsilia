@@ -60,14 +60,14 @@ class Estabelecimento
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $comentario;
+    private $evento;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->comentario = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->evento = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -295,6 +295,45 @@ class Estabelecimento
     {
         return $this->descricao;
     }
+
+    /**
+     * Add evento
+     *
+     * @param \Ens\JobeetBundle\Entity\Evento $evento
+     *
+     * @return Estabelecimento
+     */
+    public function addEvento(\Ens\JobeetBundle\Entity\Evento $evento)
+    {
+        $this->evento[] = $evento;
+
+        return $this;
+    }
+
+    /**
+     * Remove evento
+     *
+     * @param \Ens\JobeetBundle\Entity\Evento $evento
+     */
+    public function removeEvento(\Ens\JobeetBundle\Entity\Evento $evento)
+    {
+        $this->evento->removeElement($evento);
+    }
+
+    /**
+     * Get evento
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvento()
+    {
+        return $this->evento;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $comentario;
+
 
     /**
      * Add comentario

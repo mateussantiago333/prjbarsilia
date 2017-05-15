@@ -44,12 +44,9 @@ Ens\JobeetBundle\Entity\Estabelecimento:
       type: text
 
   oneToMany:
+    evento:
+      targetEntity: Evento
+      mappedBy: estabelecimentos
     comentario:
       targetEntity: Comentario
-      mappedBy: estabelecimentos
-
-  oneToMany:
-    eventos:
-      targetEntity: Evento
-      inversedBy: estabelecimentos
       mappedBy: estabelecimentos

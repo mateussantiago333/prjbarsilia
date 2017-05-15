@@ -60,14 +60,14 @@ class Estabelecimento
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $comentario;
+    private $evento;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->comentario = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->evento = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -297,36 +297,37 @@ class Estabelecimento
     }
 
     /**
-     * Add comentario
+     * Add evento
      *
-     * @param \Ens\JobeetBundle\Entity\Comentario $comentario
+     * @param \Ens\JobeetBundle\Entity\Evento $evento
      *
      * @return Estabelecimento
      */
-    public function addComentario(\Ens\JobeetBundle\Entity\Comentario $comentario)
+    public function addEvento(\Ens\JobeetBundle\Entity\Evento $evento)
     {
-        $this->comentario[] = $comentario;
+        $this->evento[] = $evento;
 
         return $this;
     }
 
     /**
-     * Remove comentario
+     * Remove evento
      *
-     * @param \Ens\JobeetBundle\Entity\Comentario $comentario
+     * @param \Ens\JobeetBundle\Entity\Evento $evento
      */
-    public function removeComentario(\Ens\JobeetBundle\Entity\Comentario $comentario)
+    public function removeEvento(\Ens\JobeetBundle\Entity\Evento $evento)
     {
-        $this->comentario->removeElement($comentario);
+        $this->evento->removeElement($evento);
     }
 
     /**
-     * Get comentario
+     * Get evento
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getComentario()
+    public function getEvento()
     {
-        return $this->comentario;
+        return $this->evento;
     }
 }
+

@@ -21,6 +21,7 @@ Ens\JobeetBundle\Entity\Evento:
   manyToOne:
     estabelecimentos:
       targetEntity: Estabelecimento
+      inversedBy: evento
       joinColumn:
         name: estabelecimento_id
         referencedColumnName: id

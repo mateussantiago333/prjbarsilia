@@ -5,7 +5,6 @@ namespace Ens\JobeetBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class EventoType extends AbstractType
 {
@@ -14,13 +13,7 @@ class EventoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nome_evento');
-        $builder->add('img_evento');
-        $builder->add('data_evento');
-        $builder->add('descricao_evento');
-        $builder->add('estabelecimentos',EntityType::class, array(
-            'class' => 'EnsJobeetBundle:Estabelecimento',
-            'choice_label' => 'nome_estabelecimento'));;
+        $builder->add('nome_evento')->add('img_evento')->add('data_evento')->add('descricao_evento')->add('estabelecimentos');
     }
     
     /**
