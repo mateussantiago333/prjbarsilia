@@ -1,9 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+<div id = "estabelecimento_show">
 <section id="container">
     <div class="wrap-container">
     <!-----------------Content-Box-------------------->
+    <div id = "estabelecimento_show">
     <article class="single-post zerogrid">
         <div class="row wrap-post"><!--Start Box-->
         <div class="entry-header">
@@ -41,6 +43,14 @@
                 <h2>Descrição</h2>
                 <p>{{ estabelecimento.descricao }}</p>
 
+                <div id="create_comment">
+                <h1>Adicione o seu comentário</h1>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Comentar" />
+                    {{ form_end(form) }}
+                </div>
+
                 <div id="comments">
                     <h1>Comentarios para este estabelecimento</h1>
                     {% for comentario in estabelecimento.comentario %}
@@ -55,18 +65,6 @@
                                 </tr>                       
                             </table>
                     {% endfor %}
-                </div>
-
-
-
-
-
-                <div id="create_comment">
-                <h1>Adicione o seu comentário</h1>
-                    {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                    <input type="submit" value="Comentar" />
-                    {{ form_end(form) }}
                 </div>
             
 <!--
@@ -88,4 +86,5 @@
     </article>
     </div>
 </section>
+</div>
 {% endblock %}
