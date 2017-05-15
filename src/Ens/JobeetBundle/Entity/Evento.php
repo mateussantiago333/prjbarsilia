@@ -18,11 +18,6 @@ class Evento
     private $nome_evento;
 
     /**
-     * @var string
-     */
-    private $img_evento;
-
-    /**
      * @var \DateTime
      */
     private $data_evento;
@@ -82,30 +77,6 @@ class Evento
     public function getNomeEvento()
     {
         return $this->nome_evento;
-    }
-
-    /**
-     * Set imgEvento
-     *
-     * @param string $imgEvento
-     *
-     * @return Evento
-     */
-    public function setImgEvento($imgEvento)
-    {
-        $this->img_evento = $imgEvento;
-
-        return $this;
-    }
-
-    /**
-     * Get imgEvento
-     *
-     * @return string
-     */
-    public function getImgEvento()
-    {
-        return $this->img_evento;
     }
 
     /**
@@ -212,5 +183,34 @@ class Evento
     public function getEstabelecimentos()
     {
         return $this->estabelecimentos;
+    }
+    /**
+     * @var string
+     */
+    private $img_evento;
+
+
+    /**
+     * Set imgEvento
+     *
+     * @param string $imgEvento
+     *
+     * @return Evento
+     */
+    public function setImgEvento($imgEvento)
+    {
+        $this->img_evento = $imgEvento;
+
+        return $this;
+    }
+
+    /**
+     * Get imgEvento
+     *
+     * @return string
+     */
+    public function getImgEvento()
+    {
+        return $this->img_evento;
     }
 }
