@@ -276,7 +276,21 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
-
+#comments{
+  background-color: #e5e7f5;
+  padding: 10px 30px 20px 30px;
+}
+#comments h1{
+  color: #0e3600;
+}
+#comment_table{
+  border-left: 6px solid #6C7B8B;
+  background-color: #C0C0C0;
+  padding: 10px 20px 10px 20px; 
+}
+#comment_table tr{
+  margin-left: 20px;
+}
 #estabelecimento{
     margin-top: -10px;
 }

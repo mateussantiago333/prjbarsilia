@@ -45,15 +45,15 @@
                 <p>{{ estabelecimento.descricao }}</p>
 
                 <div id="comments">
-                    <h2>Comentarios para este estabelecimento</h2>
+                    <h1>Comentarios para este estabelecimento</h1>
                     {% for comentario in estabelecimento.comentario %}
                             <table>
-                                
                                 <tr>
-                                <td><h1>{{ comentario.autor }}</h1> <h2>{{ comentario.nota }}</h2></td>
+                                <td><h2><b>Autor: </b>{{ comentario.autor }}</h2> <h2><b>Nota: </b>
+                                {{ comentario.nota }}</h2></td>
                                 </tr>
                                 <tr>
-                                <td>{{ comentario.getTextoComentario() }}</br></td>
+                                <td><h2><b>Comentário:</b></h2><p>{{ comentario.getTextoComentario() }}</p></br></td>
                                 </tr>                       
                             </table>
                     {% endfor %}
