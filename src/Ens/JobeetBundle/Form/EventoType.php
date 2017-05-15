@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class EventoType extends AbstractType
 {
@@ -16,7 +17,12 @@ class EventoType extends AbstractType
     {
         $builder->add('nome_evento');
         $builder->add('img_evento');
-        $builder->add('data_evento');
+        $builder->add('data_evento',DateTimeType::class, array(
+        'placeholder' => array(
+        'year' => 'Ano', 'month' => 'Mês', 'day' => 'Dia',
+        'hour' => 'Hora', 'minute' => 'Minuto'
+    )
+));;
         $builder->add('descricao_evento');
         $builder->add('estabelecimentos',EntityType::class, array(
             'class' => 'EnsJobeetBundle:Estabelecimento',

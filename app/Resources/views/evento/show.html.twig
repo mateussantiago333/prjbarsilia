@@ -1,44 +1,23 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block body %}
-    <h1>Evento</h1>
+{% block content %}
+    <article class="single-post zerogrid">
+        <div class="row wrap-post"><!--Start Box-->
+        <div class="entry-header">
+            <h1>{{ evento.nomeevento }}</h1>
+            <img src="{{ evento.imgevento }}" id = "bar_img" class="img-responsive">
+            <div class="entry-content">
+                <div class="excerpt">
+                <h3>Data do evento</h3>
+                <p>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</p>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ evento.id }}</td>
-            </tr>
-            <tr>
-                <th>Nome_evento</th>
-                <td>{{ evento.nomeevento }}</td>
-            </tr>
-            <tr>
-                <th>Img_evento</th>
-                <td>{{ evento.imgevento }}</td>
-            </tr>
-            <tr>
-                <th>Data_evento</th>
-                <td>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Descricao_evento</th>
-                <td>{{ evento.descricaoevento }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <h3>Descricao do evento</h3>
+                <p>{{ evento.descricaoevento }}</p>
 
-    <ul>
-        <li>
-            <a href="{{ path('evento_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('evento_edit', { 'id': evento.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                <h3>Nome do estabelecimento:</h3>
+                <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
+                </div>
+        </div>
+        </div>
+    </article>
 {% endblock %}
