@@ -5,6 +5,7 @@ namespace Ens\JobeetBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class EstabelecimentoType extends AbstractType
 {
@@ -13,15 +14,38 @@ class EstabelecimentoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nome_estabelecimento');
-        $builder->add('tipo_estabelecimento');
-        $builder->add('endereco');
-        $builder->add('cidade');
+        $builder->add('nome_estabelecimento',null,array('label' => 'Nome do estabelecimento:'));
+        $builder->add('tipo_estabelecimento', ChoiceType::class, array('label' => 'Tipo do estabelecimento:',
+        'choices'  => array(
+        'Bar' => 'Bar',
+        'Restaurante' => 'Restaurante',
+        'Buteco' => 'Buteco',
+        'Boate' => 'Boate'
+    ),
+    ));
+        $builder->add('endereco',null,array('label' => 'Endereço:'));
+        $builder->add('cidade', ChoiceType::class, array(
+        'choices'  => array(
+        'Asa Norte' => 'Asa Norte',
+        'Asa Sul' => 'Asa Sul',
+        'Gama' => 'Gama',
+        'Taguatinga' => 'Taguatinga',
+        'Brazlândia' => 'Brazlândia',
+        'Sobradinho' => 'Sobradinho',
+        'Planaltina' => 'Planaltina',
+        'Paranoá' => 'Paranoá',
+        'Núcleo Bandeirante' => 'Núcleo Bandeirante',
+        'Cruzeiro' => 'Cruzeiro',
+        'Guará' => 'Guará',
+        'Lago Sul' => 'Lago Sul',
+        'Lago Norte' => 'Lago Norte', 
+        'Águas Claras' => 'Águas Claras'
+    ),));
         $builder->add('email');
         $builder->add('cnpj');
         $builder->add('telefone');
-        $builder->add('url_img');
-        $builder->add('descricao');
+        $builder->add('url_img',null,array('label' => 'URL da Imagem do estabelecimento:'));
+        $builder->add('descricao',null,array('label' => 'Descrição:'));
     }
     
     /**

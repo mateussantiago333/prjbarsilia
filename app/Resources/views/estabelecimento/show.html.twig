@@ -21,12 +21,9 @@
                 <p>{{ estabelecimento.cidade }}</p>
             
             
-                <h2>Tipo_estabelecimento</h2>
+                <h2>Tipo de estabelecimento</h2>
                 <p>{{ estabelecimento.tipoestabelecimento }}</p>
             
-            
-                <h2>Endereco</h2>
-                <p>{{ estabelecimento.endereco }}</p>
             
             
                 <h2>Email</h2>
@@ -41,7 +38,7 @@
                 <p>{{ estabelecimento.telefone }}</p>
             
             
-                <h2>Descricao</h2>
+                <h2>Descrição</h2>
                 <p>{{ estabelecimento.descricao }}</p>
 
                 <div id="comments">
@@ -53,7 +50,8 @@
                                 {{ comentario.nota }}</h2></td>
                                 </tr>
                                 <tr>
-                                <td><h2><b>Comentário:</b></h2><p>{{ comentario.getTextoComentario() }}</p></br></td>
+                                <td><p><h2><b>Comentário:</b></h2>{{ comentario.getTextoComentario() }}</p>
+                                </br></td>
                                 </tr>                       
                             </table>
                     {% endfor %}
@@ -64,9 +62,10 @@
 
 
                 <div id="create_comment">
+                <h1>Adicione o seu comentário</h1>
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <input type="submit" value="Create" />
+                    <input type="submit" value="Comentar" />
                     {{ form_end(form) }}
                 </div>
             
