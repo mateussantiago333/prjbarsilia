@@ -44,6 +44,17 @@
                 <h2>Descrição</h2>
                 <p>{{ estabelecimento.descricao }}</p>
 
+                <!--Eventos deste estabelecimento -->
+                <!--<center>
+                <div id = "evento_estab">
+                    <h2>Eventos deste estabelecimento</h2>
+                    {% for evento in estabelecimento.evento %}
+                      <h2><b>Nome do evento: </b>{{ evento.getNomeEvento() }}</h2> 
+                    {% endfor %}
+                </div>
+                </center>-->
+                <!-- ----------------------------------- -->
+
                 <div id="create_comment">
                 <h1>Adicione o seu comentário</h1>
                     {{ form_start(form) }}
