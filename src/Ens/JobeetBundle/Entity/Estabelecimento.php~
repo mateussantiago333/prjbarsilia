@@ -329,43 +329,5 @@ class Estabelecimento
     {
         return $this->evento;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $comentario;
-
-
-    /**
-     * Add comentario
-     *
-     * @param \Ens\JobeetBundle\Entity\Comentario $comentario
-     *
-     * @return Estabelecimento
-     */
-    public function addComentario(\Ens\JobeetBundle\Entity\Comentario $comentario)
-    {
-        $this->comentario[] = $comentario;
-
-        return $this;
-    }
-
-    /**
-     * Remove comentario
-     *
-     * @param \Ens\JobeetBundle\Entity\Comentario $comentario
-     */
-    public function removeComentario(\Ens\JobeetBundle\Entity\Comentario $comentario)
-    {
-        $this->comentario->removeElement($comentario);
-    }
-
-    /**
-     * Get comentario
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComentario()
-    {
-        return $this->comentario;
-    }
 }
+

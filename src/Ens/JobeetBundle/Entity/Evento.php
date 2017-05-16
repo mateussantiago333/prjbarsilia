@@ -1,8 +1,6 @@
 <?php
 
 namespace Ens\JobeetBundle\Entity;
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Evento
