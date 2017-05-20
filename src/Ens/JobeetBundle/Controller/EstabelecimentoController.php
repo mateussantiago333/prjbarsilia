@@ -63,7 +63,7 @@ class EstabelecimentoController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT to_char(AVG(c.nota)::float, 'FM999999990.00') FROM EnsJobeetBundle:Comentario c
+            'SELECT AVG(c.nota) FROM EnsJobeetBundle:Comentario c
             JOIN c.estabelecimentos e
             WHERE e.id = :id'
         )->setParameter('id', $estabelecimento->getId());
