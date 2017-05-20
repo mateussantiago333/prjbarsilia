@@ -8,8 +8,6 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use blackknight467\StarRatingBundle\Form\RatingType;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ComentarioType extends AbstractType
 {
@@ -27,10 +25,7 @@ class ComentarioType extends AbstractType
                     '4' => '4',
                     '5' => '5'),
             'choices_as_values' => true,'multiple'=>false,'expanded'=>true));*/
-        /*$builder->add('nota');*/
-        $builder->add('nota', RatingType::class, [
-    	'label' => 'Nota'
-        ]);
+        $builder->add('nota');
         $builder->add('email');
         $builder->add('texto_comentario');
         /*$builder->add('estabelecimentos',HiddenType::class);*/

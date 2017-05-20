@@ -5,8 +5,6 @@ use Ens\JobeetBundle\Entity\Comentario;
 use Ens\JobeetBundle\Entity\Estabelecimento;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Estabelecimento controller.
@@ -61,16 +59,6 @@ class EstabelecimentoController extends Controller
     {
         $deleteForm = $this->createDeleteForm($estabelecimento);
 
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery(
-            'SELECT AVG(c.nota) FROM EnsJobeetBundle:Comentario c
-            JOIN c.estabelecimentos e
-            WHERE e.id = :id'
-        )->setParameter('id', $estabelecimento->getId());
-
-        $media = $query->setMaxResults(1)->getOneOrNullResult();
-        $first_value = reset($media);
-
         $comentario = new Comentario();
         $form = $this->createForm('Ens\JobeetBundle\Form\ComentarioType', $comentario);
         $comentario->setEstabelecimentos($estabelecimento);
@@ -88,7 +76,6 @@ class EstabelecimentoController extends Controller
         return $this->render('estabelecimento/show.html.twig', array(
             'estabelecimento' => $estabelecimento,
             'comentario' => $comentario,
-            'media' => $first_value,
             'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -151,4 +138,3 @@ class EstabelecimentoController extends Controller
         ;
     }
 }
-
