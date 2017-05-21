@@ -69,7 +69,7 @@ class EstabelecimentoController extends Controller
         )->setParameter('id', $estabelecimento->getId());
 
         $media = $query->setMaxResults(1)->getOneOrNullResult();
-        $first_value = intval(reset($media));
+        $first_value = floatval(reset($media));
 
         $comentario = new Comentario();
         $form = $this->createForm('Ens\JobeetBundle\Form\ComentarioType', $comentario);
