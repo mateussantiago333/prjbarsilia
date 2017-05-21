@@ -11,7 +11,7 @@
         <div class="row wrap-post"><!--Start Box-->
         <div class="entry-header">
             <h1>{{ estabelecimento.nomeestabelecimento }}</h1>
-            <h2>Nota média do estabelecimento: {{ media }}</h2>
+            <h2>Nota média do estabelecimento: {{ media|rating }}</h2>
             <img src="{{ estabelecimento.urlimg }}" id = "bar_img" class="img-responsive" alt="">
         </div>
     <div class="entry-content">
