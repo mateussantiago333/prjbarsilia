@@ -57,7 +57,7 @@
                             <table>
                                 <tr>
                                 <td><h2><b>Autor: </b>{{ comentario.autor }}</h2> <h2><b>Nota: </b>
-                                {{ comentario.nota }}</h2></td>
+                                {{ comentario.nota|rating }}</h2></td>
                                 </tr>
                                 <tr>
                                 <td><p><h2><b>Comentário:</b></h2>{{ comentario.getTextoComentario() }}</p>
