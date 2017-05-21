@@ -31,13 +31,11 @@
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/symfony": "3.2.*",
-        "twig/twig": "^1.0||^2.0",
-        "blackknight467/star-rating-bundle": "2.*"
+        "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0",
-        "symfony/framework-bundle": ">=2.1"
+        "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
         "symfony-scripts": [
@@ -69,10 +67,5 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": null
-    },
-    "autoload": {
-        "psr-0": { "blackknight467\\StarRatingBundle": "" }
-    },
-    "minimum-stability": "dev",
-    "target-dir": "blackknight467/StarRatingBundle"
+    }
 }
