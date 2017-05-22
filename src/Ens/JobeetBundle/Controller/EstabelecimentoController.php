@@ -54,7 +54,7 @@ class EstabelecimentoController extends Controller
     }
 
     /**
-     * Finds and displays a estabelecimento entity.
+     * Finds and displays a estabelecimento entity
      *
      */
     public function showAction(Request $request,Estabelecimento $estabelecimento)
