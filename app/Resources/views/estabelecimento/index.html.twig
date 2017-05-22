@@ -57,7 +57,7 @@
                                 </TH>
                                     <td class = "list_bar_column">
                                     <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nome_estabelecimento }}</a></br>
-                                        <b>Nota média: </b> <h2>{{ estabelecimento.nota_media }}</h2>
+                                        <b>Nota média: </b> <h2>{{ estabelecimento.nota_media|rating }}</h2>
                                         <b>Sobre:</b></br>
                                             {{ estabelecimento.descricao }}</br>
                                         </br>
