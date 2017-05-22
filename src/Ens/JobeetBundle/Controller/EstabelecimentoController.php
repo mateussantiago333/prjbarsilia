@@ -18,8 +18,10 @@ class EstabelecimentoController extends Controller
      * Lists all estabelecimento entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $cidade = $request->get('search_cidade');
+
         $em = $this->getDoctrine()->getManager();
 
         $estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
