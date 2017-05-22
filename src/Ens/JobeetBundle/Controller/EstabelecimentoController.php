@@ -24,7 +24,10 @@ class EstabelecimentoController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
+        //$estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
+        $query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
+            e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c JOIN c.estabelecimentos e');
+        $estabelecimentos = $query->getResult();
 
         return $this->render('estabelecimento/index.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
