@@ -51,13 +51,13 @@
                             <TR class = "list_bar_line">
                                 <TH class = "list_bar_title">
                                       <figure class = "list_bar_figure">
-                                        <img class = "list_bar_icon" src="{{ estabelecimento.getUrlImg() }}" alt="ICON" width="210">
+                                        <img class = "list_bar_icon" src="{{ estabelecimento.url_img }}" alt="ICON" width="210">
                                     </figure>
 
                                 </TH>
                                     <td class = "list_bar_column">
                                     <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nomeestabelecimento }}</a></br>
-                                        <b>Nota média: </b> <h2>{{ estabelecimentos.nota_media }}</h2>
+                                        <b>Nota média: </b> <h2>4</h2>
                                         <b>Sobre:</b></br>
                                             {{ estabelecimento.descricao }}</br>
                                         </br>
