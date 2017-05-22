@@ -18,17 +18,14 @@ class EstabelecimentoController extends Controller
      * Lists all estabelecimento entities.
      *
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        $cidade = $request->get('search_cidade');
-
         $em = $this->getDoctrine()->getManager();
 
-        $estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
-        /*$query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
-            e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c JOIN c.estabelecimentos e');
-        $estabelecimentos = $query->getResult();*/
-
+        //$estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
+        $query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota),
+                e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c JOIN c.estabelecimentos e');
+        $estabelecimentos = $query->getResult();
         return $this->render('estabelecimento/index.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
         ));
@@ -59,7 +56,7 @@ class EstabelecimentoController extends Controller
     }
 
     /**
-     * Finds and displays a estabelecimento entity
+     * Finds and displays a estabelecimento entity.
      *
      */
     public function showAction(Request $request,Estabelecimento $estabelecimento)
@@ -74,7 +71,7 @@ class EstabelecimentoController extends Controller
         )->setParameter('id', $estabelecimento->getId());
 
         $media = $query->setMaxResults(1)->getOneOrNullResult();
-        $first_value = floatval(reset($media));
+        $first_value = reset($media);
 
         $comentario = new Comentario();
         $form = $this->createForm('Ens\JobeetBundle\Form\ComentarioType', $comentario);
@@ -156,4 +153,3 @@ class EstabelecimentoController extends Controller
         ;
     }
 }
-
