@@ -18,7 +18,7 @@ class EstabelecimentoController extends Controller
      * Lists all estabelecimento entities.
      *
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
