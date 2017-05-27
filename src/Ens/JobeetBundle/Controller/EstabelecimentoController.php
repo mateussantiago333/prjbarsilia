@@ -18,13 +18,14 @@ class EstabelecimentoController extends Controller
      * Lists all estabelecimento entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $cidade = $request->get('search_cidade');
 
         //$estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
         $query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
-                e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c JOIN c.estabelecimentos e GROUP BY e.id');
+                e.descricao, e.url_img,e.cidade FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c GROUP BY e.id ORDER BY nota_media DESC');
         $estabelecimentos = $query->getResult();
         return $this->render('estabelecimento/index.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
