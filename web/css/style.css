@@ -277,7 +277,6 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
     white-space: nowrap;
     width: 200px;
     overflow: hidden;
-    display: block;
 }
 .p1 .nowrap { width: 200px; }
 .p2 .nowrap { width: 300px; }
