@@ -273,26 +273,14 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
-.fleft { float: left; }
-.nowrap {
-    white-space: nowrap;
-    width: 200px;
-    overflow: hidden;
-    display: block;
-}
-.p1 .nowrap { width: 200px; }
-.p2 .nowrap { width: 300px; }
-.p3 .nowrap { width: 400px; }
-.p4 .nowrap { width: 500px; }
-.p5 .nowrap { width: 600px; }
 
 #searchForm{
   margin-left: 180px;
 }
 
 .col-sm-6 .col-md-4{
-  max-height: 600;
-  min-height: 600;
+  max-height: 600px;
+  height: 600px;
 }
 
 #estabelecimento_show{
