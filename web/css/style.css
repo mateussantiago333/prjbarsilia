@@ -284,9 +284,11 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
    max-width:228.99; /* or whatever width you want. */
    display: inline-block;
 }
-.thumbnail img{
+.img_estab{
   width: 270;
   height: 145;
+  max-width: 270;
+  max-height: 145;
 }
 
 #searchForm{
