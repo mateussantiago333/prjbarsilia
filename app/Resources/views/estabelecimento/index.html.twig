@@ -40,24 +40,27 @@
                         </div>
                         <div class="entry-content">
                             <div class="excerpt">
-                                <div class="row">
-                                {% for estabelecimento in estabelecimentos %}
-                                  <div class="col-sm-6 col-md-4">
-                                    <div class="thumbnail">
-                                      <img src="{{ estabelecimento.url_img }}" alt="ICON" width="250">
-                                      <div class="caption">
-                                        <h3>{{ estabelecimento.nome_estabelecimento }}</h3>
-                                          <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
-                                          <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
-                                        <p>{{ estabelecimento.descricao }}</p>
-                                        <p><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
-                                         class="btn btn-primary" role="button">
-                                         Ver este {{ estabelecimento.getTipoEstabelecimento() }}</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  {% endfor %}
-                                </div>
+                            <table>
+                            {% for estabelecimento in estabelecimentos %}
+                            <TR class = "list_bar_line">
+                                <TH class = "list_bar_title">
+                                      <figure class = "list_bar_figure">
+                                        <img class = "list_bar_icon" src="{{ estabelecimento.url_img }}" alt="ICON" width="250">
+                                    </figure>
+
+                                </TH>
+                                    <td class = "list_bar_column">
+                                    <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nome_estabelecimento }}</a><br/>
+                                        <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
+                                        <b>Nota média: </b> <h2>{{ estabelecimento.nota_media|rating }}</h2>
+                                        <b>Sobre:</b></br>
+                                            {{ estabelecimento.descricao }}</br>
+                                        </br>
+                                    </td>
+                                </TR>                               
+                            </TR>
+                            {% endfor %}
+                            </table>
                             </div>
                         </div>
                     </div>
