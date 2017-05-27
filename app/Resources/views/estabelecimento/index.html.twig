@@ -40,11 +40,9 @@
                         </div>
                         <div class="entry-content">
                             <div class="excerpt">
-                            <table>
-
                                 <div class="row">
+                                {% for estabelecimento in estabelecimentos %}
                                   <div class="col-sm-6 col-md-4">
-                                    {% for estabelecimento in estabelecimentos %}
                                     <div class="thumbnail">
                                       <img src="{{ estabelecimento.url_img }}" alt="ICON" width="250">
                                       <div class="caption">
@@ -56,10 +54,9 @@
                                          class="btn btn-primary" role="button">Ver este {{ estabelecimento.tipo_estabelecimento }}</a>
                                       </div>
                                     </div>
-                                    {% endfor %}
                                   </div>
+                                  {% endfor %}
                                 </div>
-                            </table>
                             </div>
                         </div>
                     </div>
