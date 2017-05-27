@@ -6,12 +6,14 @@
                 <form action="#" method="get" id="searchForm" class="input-group">
                     
                     <div class="input-group-btn search-panel">
-                        <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <option value="all">Cidade</option>
-                            {% for estabelecimento in estabelecimentos %}
-                                <option value="{{ estabelecimento.cidade }}">{{ estabelecimento.cidade }}</option>
-                            {% endfor %}
-                        </select>
+                        <form name='search_city' method="post">
+                            <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <option value="">Cidade</option>
+                                {% for estabelecimento in estabelecimentos %}
+                                    <option value="{{ estabelecimento.cidade }}">{{ estabelecimento.cidade }}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
                         <select name="search_tipo" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <option value="all">Tipo de estabelecimento</option>
                             <option value="bar">Bar</option>

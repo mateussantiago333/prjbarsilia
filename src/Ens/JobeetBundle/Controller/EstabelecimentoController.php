@@ -21,11 +21,13 @@ class EstabelecimentoController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $cidade = $request->get('search_cidade');
+        $cidade = $request->get('search_city');
 
         //$estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
         $query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,e.cidade,AVG(c.nota) as nota_media,
-                e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c JOIN c.estabelecimentos e GROUP BY e.id ORDER BY nota_media');
+                e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c 
+                WHERE e.cidade = :cidade
+                JOIN c.estabelecimentos e GROUP BY e.id ORDER BY nota_media')->setParameter('cidade', $cidade);
         $estabelecimentos = $query->getResult();
         return $this->render('estabelecimento/index.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
