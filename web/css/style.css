@@ -277,6 +277,11 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   margin-left: 180px;
 }
 
+.col-sm-6 .col-md-4{
+  max-height: 600;
+  min-height: 600;
+}
+
 #estabelecimento_show{
   margin-top: -40px;
 }
