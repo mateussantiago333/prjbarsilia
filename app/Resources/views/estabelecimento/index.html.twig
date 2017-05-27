@@ -52,7 +52,7 @@
                                         <p>{{ estabelecimento.descricao }}</p>
                                         <p><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
                                          class="btn btn-primary" role="button">
-                                         Ver este {{ estabelecimento.tipo_estabelecimento }}</a>
+                                         Ver este {{ estabelecimento.getTipoEstabelecimento() }}</a>
                                       </div>
                                     </div>
                                   </div>
