@@ -27,7 +27,7 @@ class EstabelecimentoController extends Controller
         $query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,e.cidade,AVG(c.nota) as nota_media,
                 e.descricao, e.url_img FROM EnsJobeetBundle:Comentario c 
                 WHERE e.cidade = :cidade
-                JOIN c.estabelecimentos e GROUP BY e.id ORDER BY nota_media')->setParameter('cidade', $cidade);
+                JOIN c.estabelecimentos e GROUP BY e.id ORDER BY nota_media');
         $estabelecimentos = $query->getResult();
         return $this->render('estabelecimento/index.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
