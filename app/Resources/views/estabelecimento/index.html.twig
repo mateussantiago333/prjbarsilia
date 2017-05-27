@@ -49,9 +49,9 @@
                                         <h3>{{ estabelecimento.nome_estabelecimento }}</h3>
                                           <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
                                           <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
-                                        <p class="p p4"><span class="nowrap fleft">{{ estabelecimento.descricao }}</span> ...</p>
+                                          <p>{{ estabelecimento.descricao }}...</p>
                                         <p><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
-                                         class="btn btn-primary" role="button">Ver este {{ estabelecimento.tipo_estabelecimento }}</a>
+                                         class="btn btn-primary" role="button">Ver este</a>
                                            <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
                                       </div>
                                     </div>
