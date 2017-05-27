@@ -51,7 +51,6 @@
                     {{ form_end(form) }}
                 </div>
 
-                {% if estabelecimento.comentario is not empty %}
                 <div id="comments">
                     <h1>Comentarios para este estabelecimento</h1>
                     {% for comentario in estabelecimento.comentario %}
@@ -67,7 +66,7 @@
                             </table>
                     {% endfor %}
                 </div>
-                {% endif %}
+            
 <!--
     <ul>
         <li>
