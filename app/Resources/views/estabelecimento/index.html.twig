@@ -8,9 +8,9 @@
                     <div class="input-group-btn search-panel">
                         <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <option value="all">Cidade</option>
-                            <option value="asa_norte">Asa norte</option>
-                            <option value="asa_sul">Asa Sul</option>
-                            <option value="sobradinho">Sobradinho</option>
+                            {% for estabelecimento in estabelecimentos %}
+                                <option value="{{ estabelecimento.cidade }}">{{ estabelecimento.cidade }}</option>
+                            {% endfor %}
                         </select>
                         <select name="search_tipo" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <option value="all">Tipo de estabelecimento</option>
@@ -57,6 +57,7 @@
                                 </TH>
                                     <td class = "list_bar_column">
                                     <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nome_estabelecimento }}</a></br>
+                                        <b>Cidade:</b> {{ estabelecimento.cidade }}
                                         <b>Nota média: </b> <h2>{{ estabelecimento.nota_media|rating }}</h2>
                                         <b>Sobre:</b></br>
                                             {{ estabelecimento.descricao }}</br>
