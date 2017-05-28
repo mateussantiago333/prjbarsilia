@@ -93,7 +93,7 @@
   border-right-color: #ffffff;
 }
 #cssmenu ul li ul li a {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   text-transform: none;
   color: #000000;
@@ -173,7 +173,6 @@
   border-radius: 13px;
   right: 14px;
   top: 16px;
-  font-size: 20px;
 }
 #cssmenu > ul > li.has-sub > a:before {
   display: block;
@@ -227,7 +226,7 @@
 }
 #cssmenu > ul > li > a {
   display: block;
-  font-size: 14px;
+  font-size: 18px;
 }
 #cssmenu > ul > li {
   width: auto;
@@ -340,7 +339,7 @@
     padding: 15px 20px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 1px;
     color: #131313;
     cursor: pointer;
