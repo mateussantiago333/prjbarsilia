@@ -1,10 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <section id="container">
+    <div class="container">
         <div class="form-group row">
                         <h1>Cadastro de Evento</h1>
-
+        <form>
+            <div class="form-group">
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         <input type="submit" value="Create" />
@@ -14,6 +15,8 @@
                                     <a href="{{ path('evento_index') }}">Back to the list</a>
                                 </li>
                             </ul>
+            </div>
+        </form>
         </div>
-    </section>
+    </div>
 {% endblock %}
