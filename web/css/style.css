@@ -273,9 +273,25 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
-.panel .panel-danger{
+.panel-primary{
   margin: 10px 300px 10px 300px; 
 }
+.panel-danger table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.panel-danger td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.panel-danger tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 .caption p {
   overflow: hidden;
   display: -webkit-box;
