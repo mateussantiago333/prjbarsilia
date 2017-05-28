@@ -273,6 +273,10 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
+.index_list{
+  margin-top: -50px;
+}
+
 .form_customizado{
   margin-top: -40px;
 }
