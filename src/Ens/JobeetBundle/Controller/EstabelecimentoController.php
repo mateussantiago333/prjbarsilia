@@ -26,15 +26,8 @@ class EstabelecimentoController extends Controller
         $nota = $request->get('search_nota');
 
     //----------------Filtros de estabelecimentos------------------
-    if (!empty($cidade) && !empty($tipo) && !empty($nota) && $nota == 4) {
-        $query_filter = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
-        e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade
-         FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
-        WHERE e.cidade = :cidade AND e.tipo_estabelecimento = :tipo AND nota_media >= 3
-         GROUP BY e.id ORDER BY nota_media DESC')
-        ->setParameter('cidade', $cidade)->setParameter('tipo', $tipo);
-        $estabelecimentos = $query_filter->getResult();
-    }elseif (!empty($cidade) && !empty($tipo)) {
+
+    if (!empty($cidade) && !empty($tipo)) {
         $query_filter = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
         e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
