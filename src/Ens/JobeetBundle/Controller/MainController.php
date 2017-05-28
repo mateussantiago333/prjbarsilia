@@ -30,6 +30,8 @@ class MainController extends Controller
 
     	shuffle($estabelecimentos);
 
-		return $this->render('main/main.html.twig');
+		return $this->render('main/main.html.twig', array(
+            'estabelecimentos' => $estabelecimentos,
+        ));
     }
 }
