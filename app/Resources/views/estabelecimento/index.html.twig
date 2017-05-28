@@ -2,32 +2,45 @@
 
 {% block content %}
   <div class = "index_list">
-        <!--////////////////////////////////////Filter search bar/////-->
-            <div class="col-xs-8 col-xs-offset-2">
-                <form action="#" method="get" id="searchForm" class="input-group">
-                    
+<div class="col-xs-8 col-xs-offset-2">
+                <form action="#" method="get" id="searchForm" class="input-group">                  
                     <div class="input-group-btn search-panel">
                         <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <option value="all">Cidade</option>
-                            <option value="asa_norte">Asa norte</option>
-                            <option value="asa_sul">Asa Sul</option>
-                            <option value="sobradinho">Sobradinho</option>
+                            <option value="">Por cidade</option>
+                            <option value="Asa Norte">Asa Norte</option>
+                            <option value="Asa Sul">Asa Sul</option>
+                            <option value="Gama">Gama</option>
+                            <option value="Taguatinga">Taguatinga</option>
+                            <option value="Brazlândia">Brazlândia</option>
+                            <option value="Sobradinho">Sobradinho</option>
+                            <option value="Planaltina">Planaltina</option>
+                            <option value="Paranoá">Paranoá</option>
+                            <option value="Núcleo Bandeirante">Núcleo Bandeirante</option>
+                            <option value="Cruzeiro">Cruzeiro</option>
+                            <option value="Guará">Guará</option>
+                            <option value="Lago Sul">Lago Sul</option>
+                            <option value="Lago Norte">Lago Norte</option>
+                            <option value="Águas Claras">Águas Claras</option>
                         </select>
                         <select name="search_tipo" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <option value="all">Tipo de estabelecimento</option>
-                            <option value="bar">Bar</option>
-                            <option value="restaurante">Restaurante</option>
-                            <option value="buteco">Buteco</option>
+                            <option value="">Por tipo</option>
+                            <option value="Bar">Bar</option>
+                            <option value="Restaurante">Restaurante</option>
+                            <option value="Buteco">Buteco</option>
+                            <option value="Boate">Boate</option>
                         </select>
-                    <input type="text" class="form-control" name="x" placeholder="Search term...">
+                        <button class="btn btn-default" type="submit">
+                           <span class="glyphicon glyphicon-search"></span>
+                        </button>
                     </div>
-                      <span class="input-group-btn">
+                    <input type="text" class="form-control" name="x" placeholder="Search term...">
+                    <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                            <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
                 </form><!-- end form -->     
-            </div><!-- end col-xs-8 -->
+            </div>
 
 
         <section id="container">
