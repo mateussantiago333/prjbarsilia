@@ -78,7 +78,7 @@ input:not([type]), input[type="color"], input[type="email"], input[type="number"
 /* ------------------------------------Html-Body------------------------------- */
 /* ---------------------------------------------------------------------------- */
 html, body {width:100%; padding:0; margin:0;}
-body {font: 14px/25px Arial, Helvetica, sans-serif;font-family: 'Lobster_1.3', sans-serif;background: #fff;color: #666;font-size: 19px;line-height: 1.6em;letter-spacing: .2px;}
+body {font: 14px/25px Arial, Helvetica, sans-serif;font-family: 'Lobster', sans-serif;background: #fff;color: #666;font-size: 19px;line-height: 1.6em;letter-spacing: .2px;}
 body .wrap-body{}
 
 /* ---------------------------------------------------------------------------- */
@@ -427,9 +427,4 @@ label.star:before {
 /* ---------------------------------------*/
 @media(max-width:768px) {
   .portfolio-box {max-width: 350px}
-}
-
-@font-face {
-    font-family: Lobster_1.3;
-    src: url("path/Lobster_1.3.otf") format("opentype");
 }
