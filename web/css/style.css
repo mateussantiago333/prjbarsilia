@@ -418,7 +418,9 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   margin-left: 20px;
   width: 700px;
 }
-
+.filters{
+  margin-left: -30px;
+}
 .filter{
   float:middle;
   clear:right;
