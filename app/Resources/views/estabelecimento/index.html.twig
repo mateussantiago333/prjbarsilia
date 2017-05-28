@@ -8,13 +8,13 @@
                     
                     <div class="input-group-btn search-panel">
                         <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <option value="all">Cidade</option>
+                            <option value="all">Por cidade</option>
                             {% for estabelecimento in estabelecimentos %}
                                 <option value="{{ estabelecimento.cidade }}">{{ estabelecimento.cidade }}</option>
                             {% endfor %}
                         </select>
                         <select name="search_tipo" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <option value="all">Tipo de estabelecimento</option>
+                            <option value="all">Por tipo</option>
                             <option value="bar">Bar</option>
                             <option value="restaurante">Restaurante</option>
                             <option value="buteco">Buteco</option>
@@ -25,11 +25,9 @@
                             <option value="3">Menor que 3</option>
                             <option value="3_4">Entre 3 e 4</option>
                         </select>
-                        <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                            <span class="glyphicon glyphicon-search"></span>
                         </button>
-                    </span>
                     </div>
                 </form><!-- end form -->     
             </div><!-- end col-xs-8 -->
