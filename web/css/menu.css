@@ -192,6 +192,7 @@
   text-transform: uppercase;
   z-index: 2;
   position: relative;
+  font-size: 18px;
 }
 #cssmenu > ul > li:hover:after,
 #cssmenu > ul > li.active:after {

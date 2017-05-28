@@ -273,10 +273,10 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
-/*.caption p,h3,body{
+.caption p,h3,body{
   font-size: 15px;
 }
-
+/*
 article .entry-content p{
   font-size: 15px;
 }
