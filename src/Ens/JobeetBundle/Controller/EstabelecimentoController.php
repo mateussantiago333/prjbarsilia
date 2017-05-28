@@ -26,9 +26,9 @@ class EstabelecimentoController extends Controller
 
     if (!empty($cidade) || !empty($tipo)) {
         $query_filter = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
-        e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade
+        e.descricao,e.tipoestabelecimento, e.url_img,e.cidade
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
-        WHERE e.cidade = :cidade OR e.tipo_estabelecimento = :tipo
+        WHERE e.cidade = :cidade OR e.tipoestabelecimento = :tipo
          GROUP BY e.id ORDER BY nota_media DESC')
         ->setParameter('cidade', $cidade)->setParameter('tipo', $tipo);
         $estabelecimentos = $query_filter->getResult();
