@@ -406,6 +406,12 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
 #search_param{
   width: 190px;
   font-size: 20px;
+  margin-right: 10px;
+  margin-left: -9px;
+}
+
+.input-group-btn .search-panel{
+  margin-left: -30px;
 }
 
 .form-control{
