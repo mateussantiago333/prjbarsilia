@@ -44,27 +44,23 @@
 </div>
 </section>
 		<!--Estabelecimentos cadastrados randomizados -->
-		<div class="panel panel-danger">
+		<div class="panel panel-primary">
 		  <!-- Default panel contents -->
 		  <div class="panel-heading">Panel heading</div>
-
-		  <!-- Table -->
-		  <table class="table_estabelecimentos">
-		      <tr>
-		        <th>#</th>    	
-			    <th>Estabelecimento:</th>
-			    <th>Nota média</th> 
-			    <th>Cidade</th>			    
-			  </tr>
-			  {% for estabelecimento in estabelecimentos %}
-			  <tr>
-			  	<td><img src="{{ estabelecimento.url_img }}" alt="ICON" width="130" height="60"></td>
-			    <td>{{ estabelecimento.nome_estabelecimento }}</td>
- 			    <td>{{ estabelecimento.nota_media|rating }}</td> 
-			    <td>{{ estabelecimento.cidade }}</td>
-			  </tr>
-			  {% endfor %}
-		  </table>
+		    {% for estabelecimento in estabelecimentos %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="{{ estabelecimento.url_img }}" alt="ICON">
+                        <div class="caption">
+                             <h3><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nome_estabelecimento }}</a></h3>
+                             <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
+                             <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
+                             <p>{{ estabelecimento.descricao }}</p>
+                                           <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
 		</div>
 
 		<!---------------------------------------------->
