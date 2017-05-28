@@ -226,6 +226,7 @@
 }
 #cssmenu > ul > li > a {
   display: block;
+  font-size: 14px;
 }
 #cssmenu > ul > li {
   width: auto;
