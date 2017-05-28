@@ -1,22 +1,21 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="container">
-        <div class="form-group row">
-                        <h1>Cadastro de Evento</h1>
-        <form>
-            <div class="form-group">
+    <section id="container">
+        <div class="wrap-container">
+                <section class="content-box zerogrid">
+                    <div class="row wrap-box"><!--Start Box-->
+                    <div class="contact-form">
+                    <h3 class="t-center">Cadastro de Evento</h3>
+                        <div class="wrap-col">
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
-                        <input type="submit" value="Create" />
+                        <input type="submit" value="Cadastrar" />
                         {{ form_end(form) }}
-                            <ul>
-                                <li>
-                                    <a href="{{ path('evento_index') }}">Back to the list</a>
-                                </li>
-                            </ul>
-            </div>
-        </form>
+                        </div>
+                    </div>
+                    </div>
+                </section>
         </div>
-    </div>
+    </section>
 {% endblock %}
