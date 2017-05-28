@@ -102,6 +102,7 @@
   display: block;
   width: 170px;
   padding: 11px 10px 11px 20px;
+  background-color: #ff8300;
 }
 #cssmenu ul li ul li:hover > a,
 #cssmenu ul li ul li.active > a {
@@ -154,7 +155,7 @@
   height: 0;
   top: 0;
   z-index: 0;
-  background: #ffffff;
+  background: #ff8300;
   -webkit-transition: height .2s;
   -moz-transition: height .2s;
   -ms-transition: height .2s;
