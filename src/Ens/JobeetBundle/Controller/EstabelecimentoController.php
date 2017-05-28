@@ -41,7 +41,7 @@ class EstabelecimentoController extends Controller
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
         WHERE e.tipo_estabelecimento = :tipo
          GROUP BY e.id ORDER BY nota_media DESC')
-        ->setParameter('cidade', $cidade)->setParameter('tipo', $tipo);
+        ->setParameter('tipo', $tipo);
         $estabelecimentos = $query_filter->getResult();
     }elseif (!empty($cidade)) {
         $query_filter = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
