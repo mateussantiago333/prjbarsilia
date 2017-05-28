@@ -9,7 +9,7 @@
                     <div class="input-group-btn search-panel">
                         <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <option value="all">Por cidade</option>
-                            {% for estabelecimento in estabelecimentos %}
+                            {% for estabelecimento in types %}
                                 <option value="{{ estabelecimento.cidade }}">{{ estabelecimento.cidade }}</option>
                             {% endfor %}
                         </select>
