@@ -48,7 +48,7 @@ class EstabelecimentoController extends Controller
         $query_filter = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
         e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
-        WHERE e.tipo_estabelecimento LIKE :all
+        WHERE UPPER(e.tipo_estabelecimento) LIKE UPPER(:all)
          GROUP BY e.id ORDER BY nota_media DESC')
         ->setParameter('all', '%'.$all.'%');
         $estabelecimentos = $query_filter->getResult();
