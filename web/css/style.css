@@ -280,6 +280,10 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
 .caption p,h3,body{
   font-size: 18px;
 }
+
+.btn-group-lg>.btn, .btn-lg{
+  font-size: 16.3px;
+}
 /*
 article .entry-content p{
   font-size: 15px;
@@ -287,11 +291,6 @@ article .entry-content p{
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name span{
   font-size: 20px;
-}
-
-
-.btn-group-lg>.btn, .btn-lg{
-  font-size: 13.5px;
 }
 
 .link a{
