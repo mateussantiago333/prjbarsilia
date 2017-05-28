@@ -273,7 +273,7 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
-.panel-primary{
+.estabelecimentos_main .panel-primary{
   margin: 10px 300px 10px 300px; 
 }
 .panel-danger table {
