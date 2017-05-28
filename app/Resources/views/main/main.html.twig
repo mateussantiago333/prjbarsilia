@@ -43,7 +43,31 @@
   	</div>
 </div>
 </section>
+		<!--Estabelecimentos cadastrados randomizados -->
+		<div class="panel panel-danger">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Panel heading</div>
 
+		  <!-- Table -->
+		  <table class="table">
+		      <tr>
+		        <th>#</th>    	
+			    <th>Estabelecimento:</th>
+			    <th>Nota média</th> 
+			    <th>Cidade</th>			    
+			  </tr>
+			  {% for estabelecimento in estabelecimentos %}
+			  <tr>
+			  	<td><img src="{{ estabelecimento.url_img }}" alt="ICON"></td>
+			    <td>{{ estabelecimento.nome_estabelecimento }}</td>
+ 			    <td>{{ estabelecimento.nota_media|rating }}</td> 
+			    <td>{{ estabelecimento.cidade }}</td>
+			  </tr>
+			  {% endfor %}
+		  </table>
+		</div>
+
+		<!---------------------------------------------->
 
 		<section id="container">
 			<div class="wrap-container">
