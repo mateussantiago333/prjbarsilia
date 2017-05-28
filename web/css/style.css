@@ -273,6 +273,14 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
+.thumbnail .caption{
+  font-size: 15px;
+}
+
+article .entry-content p{
+  font-size: 15px;
+}
+
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name span{
   font-size: 20px;
 }
