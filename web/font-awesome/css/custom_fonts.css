@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Lobster';
+  src: url('../fonts/Lobster_1.3.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_Bd.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/AllerDisplay.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aller';
+  src: url('../fonts/Aller_It.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
