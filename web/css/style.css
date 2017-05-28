@@ -273,6 +273,9 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
+.table_estabelecimentos{
+  margin: 10px 300px 10px 300px; 
+}
 .caption p {
   overflow: hidden;
   display: -webkit-box;
