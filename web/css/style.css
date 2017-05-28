@@ -273,6 +273,20 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name span{
+  font-size: 20px;
+}
+
+
+.btn-group-lg>.btn, .btn-lg{
+  font-size: 13.5px;
+}
+
+.link a{
+  font-size: 14px;
+}
+
+
 .estabelecimentos_main .panel-primary{
   margin: 10px 300px 10px 300px; 
 }
