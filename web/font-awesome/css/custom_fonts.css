@@ -17,11 +17,18 @@
   src: url('../fonts/AllerDisplay.ttf');
   font-weight: bold;
   font-style: normal;
-}
+}HAMBH___
 
 @font-face {
   font-family: 'Aller';
   src: url('../fonts/Aller_It.ttf');
   font-weight: normal;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'HAMBG';
+  src: url('../fonts/HAMBH___.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
