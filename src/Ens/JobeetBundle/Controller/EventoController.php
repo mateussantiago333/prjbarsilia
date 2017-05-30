@@ -59,8 +59,31 @@ class EventoController extends Controller
     {
         $deleteForm = $this->createDeleteForm($evento);
 
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT AVG(c.nota) FROM EnsJobeetBundle:Comentario_Evento c
+            JOIN c.eventos e
+            WHERE e.id = :id'
+        )->setParameter('id', $evento->getId());
+        $media = $query->setMaxResults(1)->getOneOrNullResult();
+        $first_value = reset($media);
+
+        $comentario_Evento = new Comentario_evento();
+        $form = $this->createForm('Ens\JobeetBundle\Form\Comentario_EventoType', $comentario_Evento);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comentario_Evento);
+            $em->flush();
+            return $this->redirectToRoute('evento_show', array('id' => $evento->getId()));
+        }
+
         return $this->render('evento/show.html.twig', array(
             'evento' => $evento,
+            'delete_form' => $deleteForm->createView(),
+            'media' => $first_value,
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

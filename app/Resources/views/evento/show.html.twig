@@ -1,23 +1,60 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+<div id = "evento_show">
+<section id="container">
+    <div class="wrap-container">
+    <!-----------------Content-Box-------------------->
+
+    <div id = "evento_show">
     <article class="single-post zerogrid">
         <div class="row wrap-post"><!--Start Box-->
         <div class="entry-header">
             <h1>{{ evento.nomeevento }}</h1>
-            <img src="{{ evento.imgevento }}" id = "bar_img" class="img-responsive">
-            <div class="entry-content">
-                <div class="excerpt">
-                <h3>Data do evento</h3>
+            <h2>Nota média do estabelecimento: {{ media|rating }}</h2>
+            <img src="{{ evento.imgevento }}" id = "bar_img" class="img-responsive" alt="">
+        </div>
+    <div class="entry-content">
+        <div class="excerpt">        
+                <h2>Data do evento</h2>
                 <p>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</p>
 
-                <h3>Descricao do evento</h3>
+                <h2>Descricao do evento</h2>
                 <p>{{ evento.descricaoevento }}</p>
 
                 <h3>Nome do estabelecimento:</h3>
                 <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
+
+                <div id="create_comment">
+                <h1>Adicione o seu comentário</h1>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Comentar" />
+                    {{ form_end(form) }}
                 </div>
-        </div>
-        </div>
+
+                {% if evento.comentario_Evento is not empty %}
+                <div id="comments">
+                    <h1>Comentarios para este evento</h1>
+                    {% for comentario_Evento in evento.comentario_Evento %}
+                            <table>
+                                <tr>
+                                <td><h2><b>Autor: </b>{{ {{ comentario_Evento.autor }} }}</h2> 
+                                    <h2><b>Nota: </b>
+                                        {{ comentario_Evento.nota|rating }}</h2></td>
+                                </tr>
+                                <tr>
+                                <td><p><h2><b>Comentário:</b></h2>{{ comentario_Evento.textocomentario }}</p>
+                                </br></td>
+                                </tr>                       
+                            </table>
+                    {% endfor %}
+                </div>
+                {% endif %}
+    </div>
+    </div>
     </article>
+    </div>
+</section>
+</div>
 {% endblock %}
