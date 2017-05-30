@@ -5,11 +5,6 @@ namespace Ens\JobeetBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use StarRatingBundle\Form\RatingType;
 
 class Comentario_EventoType extends AbstractType
 {
@@ -18,13 +13,7 @@ class Comentario_EventoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        //$builder->add('autor')->add('nota')->add('email')->add('texto_comentario')->add('eventos');
-        $builder->add('autor');
-        $builder->add('nota', RatingType::class, [
-            'label' => 'Nota'
-        ]);
-        $builder->add('email');
-        $builder->add('texto_comentario');
+        $builder->add('autor')->add('nota')->add('email')->add('texto_comentario')->add('eventos');
     }
     
     /**
