@@ -79,9 +79,8 @@
                                       <img src="{{ evento.img_evento }}" alt="ICON">
                                       <div class="caption">
                                         <h3>{{ evento.nome_evento }}</h3>
-                                          <b>Data:</b>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}<br/>
+                                          <b>Data:</b>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}<br/>
                                           <b>Tipo: </b>{{ estabelecimento.tipo_estabelecimento }}<br/>
-                                          <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
                                           <p>{{ evento.descricaoevento }}</p>
                                         <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
                                          class="btn btn-primary" role="button">Veja mais...</a>
