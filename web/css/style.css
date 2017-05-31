@@ -339,6 +339,10 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   height: 170px;
 }
 
+.eventos_estabelecimento .thumbnail .caption{
+  padding: 40px;
+}
+
 .img_estab{
   width: 270;
   height: 145;
