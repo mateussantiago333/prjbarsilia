@@ -82,9 +82,9 @@
                                     <div class="thumbnail">
                                       <img src="{{ evento.getImgEvento() }}" alt="ICON">
                                       <div class="caption">
-                                        <h2>Evento: {{ evento.getNomeEvento() }}</h2>
-                                          <h2>Data:</h2>{% if evento.dataevento %}<p>{{ evento.dataevento|date('d-m-Y H:i:s') }}</p>{% endif %}
-                                          <h2>Descrição do evento:</h2>
+                                        <h2>{{ evento.getNomeEvento() }}</h2>
+                                          <h3>Data:</h3>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}<br/>
+                                          <h3>Descrição do evento:</h3>
                                           <p>{{ evento.descricaoevento }}</p>
                                         <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
                                          class="btn btn-primary" role="button">Veja mais...</a>
