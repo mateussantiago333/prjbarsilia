@@ -71,16 +71,17 @@
 
                 {% if estabelecimento.comentario is not empty %}
                 <div class="entry-content">
+                    <h1>Eventos deste estabelecimento: </h1>
                             <div class="excerpt">
                                  <div class="row">
                                 {% for evento in estabelecimento.evento %}
                                   <div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                      <img src="{{ evento.img_evento }}" alt="ICON">
+                                      <img src="{{ evento.getImgEvento() }}" alt="ICON">
                                       <div class="caption">
                                         <h3>{{ evento.nome_evento }}</h3>
                                           <b>Data:</b>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}<br/>
-                                          <b>Tipo: </b>{{ estabelecimento.tipo_estabelecimento }}<br/>
+                                          <h2>Descrição do evento:</h2>
                                           <p>{{ evento.descricaoevento }}</p>
                                         <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
                                          class="btn btn-primary" role="button">Veja mais...</a>
