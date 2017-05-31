@@ -70,7 +70,6 @@
                 {% endif %}
 
             {% if estabelecimento.evento is not empty %}
-            <article class="single-post zerogrid">
                 <div class="row wrap-post"><!--Start Box-->
                 <div class="entry-header">
                 <div class="entry-content">
@@ -83,7 +82,7 @@
                                     <div class="thumbnail">
                                       <img src="{{ evento.getImgEvento() }}" alt="ICON">
                                       <div class="caption">
-                                        <h2>Evento: {{ evento.nome_evento }}</h2>
+                                        <h2>Evento: {{ evento.getNomeEvento() }}</h2>
                                           <h2>Data:</h2>{% if evento.dataevento %}<p>{{ evento.dataevento|date('d-m-Y H:i:s') }}</p>{% endif %}
                                           <h2>Descrição do evento:</h2>
                                           <p>{{ evento.descricaoevento }}</p>
@@ -100,7 +99,6 @@
                         </div>
                     </div>
                 </div>
-            </article>
             {% endif %}
 <!--
     <ul>
