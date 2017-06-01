@@ -135,10 +135,26 @@ class EstabelecimentoController extends Controller
         }
         //-------------------------------------------------------------------------//
 
+        //----------------Eventos do estabelecimento-------------------------------//
+        $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
+                                            AVG(c.nota) as nota_media,
+                                            ev.descricao_evento, ev.img_evento,
+                                            ev.data_evento
+                                    FROM EnsJobeetBundle:Estabelecimento e
+                                    LEFT JOIN e.evento ev
+                                    LEFT JOIN ev.comentario_evento c
+                                    WHERE e.id = :id
+                                    GROUP BY e.id,ev.id ORDER BY nota_media DESC')
+                                    ->setParameter('id', $estabelecimento->getId());
+        $eventos = $query_eventos->getResult();
+
+        //-------------------------------------------------------------------------//
+
 
         return $this->render('estabelecimento/show.html.twig', array(
             'estabelecimento' => $estabelecimento,
             'comentario' => $comentario,
+            'eventos' => $eventos,            
             'media' => $first_value,
             'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
