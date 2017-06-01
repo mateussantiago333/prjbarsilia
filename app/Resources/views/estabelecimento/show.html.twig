@@ -80,12 +80,12 @@
                                 <div class ="eventos_estabelecimento">
                                   <div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                      <img src="{{ evento.imgevento }}" alt="ICON">
+                                      <img src="{{ evento.img_evento }}" alt="ICON">
                                       <div class="caption">
-                                        <h2>{{ evento.nomeevento }}</h2>
-                                          <h3>Data:</h3>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}<br/>
+                                        <h2>{{ evento.nome_evento }}</h2>
+                                          <h3>Data:</h3>{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}<br/>
                                           <h3>Descrição do evento:</h3>
-                                          <p>{{ evento.descricaoevento }}</p>
+                                          <p>{{ evento.descricao_evento }}</p>
                                         <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
                                          class="btn btn-primary" role="button">Veja mais...</a>
                                            <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
