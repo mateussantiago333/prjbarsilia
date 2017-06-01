@@ -6,7 +6,7 @@ evento_index:
 evento_show:
     path:     /{id}/show
     defaults: { _controller: "EnsJobeetBundle:Evento:show" }
-    methods:  GET
+    methods:  [GET, POST]
 
 evento_new:
     path:     /new

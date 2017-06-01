@@ -13,7 +13,7 @@ class Comentario_EventoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('autor')->add('nota')->add('email')->add('texto_comentario')->add('eventos');
+        $builder->add('autor')->add('nota')->add('email')->add('texto_comentario');
     }
     
     /**

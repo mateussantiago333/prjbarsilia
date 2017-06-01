@@ -54,13 +54,38 @@ class EventoController extends Controller
     /**
      * Finds and displays a evento entity.
      *
-     */
+
     public function showAction(Evento $evento)
     {
         $deleteForm = $this->createDeleteForm($evento);
 
         return $this->render('evento/show.html.twig', array(
             'evento' => $evento,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+     */
+        public function showAction(Request $request,Evento $evento)
+    {
+        $deleteForm = $this->createDeleteForm($evento);
+
+        $comentario_Evento = new Comentario_evento();
+        $form = $this->createForm('Ens\JobeetBundle\Form\Comentario_EventoType', $comentario_Evento);
+        $comentario_Evento->setEventos($evento);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comentario_Evento);
+            $em->flush();
+
+            return $this->redirectToRoute('evento_show', array('id' => $evento->getId()));
+        }
+
+        return $this->render('evento/show.html.twig', array(
+            'evento' => $evento,
+            'comentario_Evento' => $comentario_Evento,
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

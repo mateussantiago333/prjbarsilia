@@ -19,5 +19,28 @@
                 </div>
         </div>
         </div>
+            <div id="create_comment">
+                <h1>Adicione o seu comentário</h1>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Comentar" />
+                    {{ form_end(form) }}
+            </div>
+
+            <div id="comments">
+                    <h1>Comentarios para este evento</h1>
+                    {% for comentario_evento in evento.getComentarioEvento() %}
+                            <table>
+                                <tr>
+                                <td><h2><b>Autor: </b>{{ comentario_evento.autor }}</h2> <h2><b>Nota: </b>
+                                {{ comentario_evento.nota }}</h2></td>
+                                </tr>
+                                <tr>
+                                <td><p><h2><b>Comentário:</b></h2>{{ comentario_evento.getTextoComentario() }}</p>
+                                </br></td>
+                                </tr>                       
+                            </table>
+                    {% endfor %}
+                </div> 
     </article>
 {% endblock %}
