@@ -76,13 +76,13 @@
                     <h1>Eventos deste estabelecimento: </h1>
                             <div class="excerpt">
                                  <div class="row">
-                                {% for evento in estabelecimento.evento %}
+                                {% for evento in eventos %}
                                 <div class ="eventos_estabelecimento">
                                   <div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                      <img src="{{ evento.getImgEvento() }}" alt="ICON">
+                                      <img src="{{ evento.imgevento }}" alt="ICON">
                                       <div class="caption">
-                                        <h2>{{ evento.getNomeEvento() }}</h2>
+                                        <h2>{{ evento.nomeevento }}</h2>
                                           <h3>Data:</h3>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}<br/>
                                           <h3>Descrição do evento:</h3>
                                           <p>{{ evento.descricaoevento }}</p>
