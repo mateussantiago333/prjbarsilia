@@ -70,7 +70,9 @@
                 {% endif %}
 
             {% if estabelecimento.evento is not empty %}
-
+                <div class="row wrap-post"><!--Start Box-->
+                <div class="entry-header">
+                <div class="entry-content">
                     <h1>Eventos deste estabelecimento: </h1>
                             <div class="excerpt">
                                  <div class="row">
@@ -82,13 +84,16 @@
                                       <div class="caption">
                                         <h2>{{ evento.nome_evento }}</h2>
                                           <h3>Data:</h3>{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}<br/>
-                                          <h3>Nota média: </h3> {{ evento.nota_evento|rating }}
+                                          <h3>Nota média: </h3> {{ evento.nota_evento }}
                                           <h3>Descrição do evento:</h3>
                                           <p>{{ evento.descricao_evento }}</p>
                                         <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
                                          class="btn btn-primary" role="button">Veja mais...</a>
                                            <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
                                       </div>
+                                    </div>
+                                  </div>
+                                  </div>
                                   {% endfor %}
                                 </div>
                             </div>
