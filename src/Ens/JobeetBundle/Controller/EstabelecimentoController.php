@@ -144,7 +144,7 @@ class EstabelecimentoController extends Controller
                                     LEFT JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
                                     WHERE e.id = :id
-                                    GROUP BY e.id,ev.id ORDER BY ev.data_evento,nota_evento DESC')
+                                    GROUP BY ev.id,e.id ORDER BY ev.data_evento,nota_evento DESC')
                                     ->setParameter('id', $estabelecimento->getId());
         $eventos = $query_eventos->getResult();
 
