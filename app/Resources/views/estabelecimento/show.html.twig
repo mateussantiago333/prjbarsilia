@@ -80,7 +80,7 @@
                                 <div class ="eventos_estabelecimento">
                                   <div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                      <img src="{{ evento.getImgEvento() }}" alt="ICON">
+                                      <img src="{{ evento.img_evento }}" alt="ICON">
                                       <div class="caption">
                                         <h2>{{ evento.nome_evento }}</h2>
                                           <h3>Data:</h3>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}<br/>
