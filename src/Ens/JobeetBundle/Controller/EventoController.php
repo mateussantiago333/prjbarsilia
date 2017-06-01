@@ -3,6 +3,7 @@
 namespace Ens\JobeetBundle\Controller;
 
 use Ens\JobeetBundle\Entity\Evento;
+use Ens\JobeetBundle\Entity\Comentario_Evento;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
