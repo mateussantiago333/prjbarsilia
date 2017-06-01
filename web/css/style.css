@@ -600,3 +600,9 @@ label.star:before {
 .table-filter .media .summary {
   font-size: 14px;
 }
+.events_estabs{
+  width: 650px;
+  height: 250px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
