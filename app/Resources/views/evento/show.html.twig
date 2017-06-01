@@ -34,8 +34,9 @@
                     {% for comentario_evento in evento.getComentarioEvento() %}
                             <table>
                                 <tr>
-                                <td><h2><b>Autor: </b>{{ comentario_evento.autor }}</h2> <h2><b>Nota: </b>
-                                {{ comentario_evento.nota }}</h2></td>
+                                <td><h2><b>Autor: </b>{{ comentario_evento.autor }}</h2>
+                                <h2><b>Nota: </b>
+                                {{ comentario_evento.nota|rating }}</h2></td>
                                 </tr>
                                 <tr>
                                 <td><p><h2><b>Comentário:</b></h2>{{ comentario_evento.getTextoComentario() }}</p>
