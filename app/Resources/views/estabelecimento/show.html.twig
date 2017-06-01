@@ -84,6 +84,7 @@
                                                     <a href="{{ path('evento_show', { 'id': evento.id }) }}" class="pull-left">
                                                         <img src="{{ evento.img_evento }}" class="media-photo">
                                                     </a>
+                                                    {% for evento in eventos %}
                                                     <div class="media-body">
                                                         <span class="media-meta pull-right">{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}</span>
                                                         <h4 class="title">
@@ -94,6 +95,7 @@
                                                         </h4>
                                                         <p class="summary">{{ evento.descricao_evento }}</p>
                                                     </div>
+                                                    {% endfor %}
                                                 </div>
                                             </td>
                                         </tr>
