@@ -21,7 +21,15 @@ class EventoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $eventos = $em->getRepository('EnsJobeetBundle:Evento')->findAll();
+        //$eventos = $em->getRepository('EnsJobeetBundle:Evento')->findAll();
+        $query = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
+                                          e.nome_estabelecimento,AVG(c.nota) as nota_media,
+                                          ev.descricao_evento, ev.img_evento,ev.data_evento
+                                    FROM EnsJobeetBundle:Estabelecimento e
+                                     LEFT JOIN e.evento ev
+                                     LEFT JOIN ev.comentario_evento c
+                                       GROUP BY e.id ORDER BY nota_media DESC');
+        $eventos = $query->getResult();
 
         return $this->render('evento/index.html.twig', array(
             'eventos' => $eventos,
