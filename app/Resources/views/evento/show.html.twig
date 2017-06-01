@@ -5,6 +5,7 @@
         <div class="row wrap-post"><!--Start Box-->
         <div class="entry-header">
             <h1>{{ evento.nomeevento }}</h1>
+            <h2>Nota média do evento: {{ media|rating }}</h2>
             <img src="{{ evento.imgevento }}" id = "bar_img" class="img-responsive">
             <div class="entry-content">
                 <div class="excerpt">
