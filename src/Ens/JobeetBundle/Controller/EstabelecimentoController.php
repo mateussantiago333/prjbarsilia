@@ -137,14 +137,14 @@ class EstabelecimentoController extends Controller
 
                 //----------------Eventos do estabelecimento-------------------------------//
         $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
-                                            AVG(c.nota) as nota_media,
+                                            AVG(c.nota) as nota_evento,
                                             ev.descricao_evento, ev.img_evento,
                                             ev.data_evento
                                     FROM EnsJobeetBundle:Estabelecimento e
                                     LEFT JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
                                     WHERE e.id = :id
-                                    GROUP BY e.id,ev.id ORDER BY nota_media DESC')
+                                    GROUP BY e.id,ev.id ORDER BY ev.data_evento,nota_evento DESC')
                                     ->setParameter('id', $estabelecimento->getId());
         $eventos = $query_eventos->getResult();
 

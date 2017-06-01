@@ -84,7 +84,7 @@
                                       <div class="caption">
                                         <h2>{{ evento.nome_evento }}</h2>
                                           <h3>Data:</h3>{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}<br/>
-                                          <h3>Nota média: </h3> {{ nota_media|rating }}
+                                          <h3>Nota média: </h3> {{ nota_evento }}
                                           <h3>Descrição do evento:</h3>
                                           <p>{{ evento.descricao_evento }}</p>
                                         <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
