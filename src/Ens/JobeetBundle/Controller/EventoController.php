@@ -21,7 +21,7 @@ class EventoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        //$eventos = $em->getRepository('EnsJobeetBundle:Evento')->findAll();
+        $eventos = $em->getRepository('EnsJobeetBundle:Evento')->findAll();
 
         return $this->render('evento/index.html.twig', array(
             'eventos' => $eventos,
