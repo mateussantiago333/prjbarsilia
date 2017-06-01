@@ -107,6 +107,7 @@ class EstabelecimentoController extends Controller
     {
         $deleteForm = $this->createDeleteForm($estabelecimento);
 
+        //--------Média da nota dos estabelecimentos-----------
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
             'SELECT AVG(c.nota) FROM EnsJobeetBundle:Comentario c
@@ -116,7 +117,9 @@ class EstabelecimentoController extends Controller
 
         $media = $query->setMaxResults(1)->getOneOrNullResult();
         $first_value = reset($media);
+        //-----------------------------------------------------
 
+        //-------------Formulário de comentários do estabelecimento--------------//
         $comentario = new Comentario();
         $form = $this->createForm('Ens\JobeetBundle\Form\ComentarioType', $comentario);
         $comentario->setEstabelecimentos($estabelecimento);
@@ -130,11 +133,25 @@ class EstabelecimentoController extends Controller
 
             return $this->redirectToRoute('estabelecimento_show', array('id' => $estabelecimento->getId()));
         }
+        //-------------------------------------------------------------------------//
 
+        //----------------Eventos do estabelecimento-------------------------------//
+        $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
+                                            AVG(c.nota) as nota_media,
+                                            ev.descricao_evento, ev.img_evento,
+                                            ev.data_evento
+                                    FROM EnsJobeetBundle:Estabelecimento e
+                                    LEFT JOIN e.evento ev
+                                    LEFT JOIN ev.comentario_evento c
+                                    GROUP BY e.id,ev.id ORDER BY nota_media DESC');
+        $eventos = $query_eventos->getResult();
+
+        //-------------------------------------------------------------------------//
         return $this->render('estabelecimento/show.html.twig', array(
             'estabelecimento' => $estabelecimento,
             'comentario' => $comentario,
             'media' => $first_value,
+            'eventos' => $eventos,
             'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
