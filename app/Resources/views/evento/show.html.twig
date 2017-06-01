@@ -10,7 +10,7 @@
             <div class="entry-content">
                 <div class="excerpt">
                 <h3>Data do evento</h3>
-                <p>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</p>
+                <p>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}</p>
 
                 <h3>Descricao do evento</h3>
                 <p>{{ evento.descricaoevento }}</p>
@@ -28,6 +28,7 @@
                     {{ form_end(form) }}
             </div>
 
+            {% if evento.getComentarioEvento() is not empty %}
             <div id="comments">
                     <h1>Comentarios para este evento</h1>
                     {% for comentario_evento in evento.getComentarioEvento() %}
@@ -43,5 +44,6 @@
                             </table>
                     {% endfor %}
                 </div> 
+            {% endif %}
     </article>
 {% endblock %}
