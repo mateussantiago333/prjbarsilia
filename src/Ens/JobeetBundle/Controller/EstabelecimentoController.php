@@ -143,7 +143,9 @@ class EstabelecimentoController extends Controller
                                     FROM EnsJobeetBundle:Estabelecimento e
                                     LEFT JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
-                                    GROUP BY e.id,ev.id ORDER BY nota_media DESC');
+                                    WHERE e.id = :id
+                                    GROUP BY e.id,ev.id ORDER BY nota_media DESC')
+                                    ->setParameter('id', $estabelecimento->getId());
         $eventos = $query_eventos->getResult();
 
         //-------------------------------------------------------------------------//
