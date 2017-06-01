@@ -70,43 +70,31 @@
                 {% endif %}
 
             {% if estabelecimento.evento is not empty %}
-            <section class="content">
-                <h1>Eventos deste estabelecimento</h1>
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="table-container">
-                                <table class="table table-filter">
-                                    <tbody>
-                                        {% for evento in eventos %}
-                                        <tr class="events_estabs">
-                                            <td>
-                                                <div class="media">
-                                                    <a href="{{ path('evento_show', { 'id': evento.id }) }}" class="pull-left">
-                                                        <img src="{{ evento.img_evento }}" class="media-photo">
-                                                    </a>
-                                                    
-                                                    <div class="media-body">
-                                                        <span class="media-meta pull-right">{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}</span>
-                                                        <h4 class="title">
-                                                            <a href="{{ path('evento_show', { 'id': evento.id }) }}">
-                                                            {{ evento.nome_evento }}
-                                                            </a>
-                                                            <span class="pull-right media">{{ evento.nota_evento|rating }}</span>
-                                                        </h4>
-                                                        <p class="summary">{{ evento.descricao_evento }}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
+
+                    <h1>Eventos deste estabelecimento: </h1>
+                            <div class="excerpt">
+                                 <div class="row">
+                                {% for evento in eventos %}
+                                <div class ="eventos_estabelecimento">
+                                  <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                      <img src="{{ evento.img_evento }}" alt="ICON">
+                                      <div class="caption">
+                                        <h2>{{ evento.nome_evento }}</h2>
+                                          <h3>Data:</h3>{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}<br/>
+                                          <h3>Nota média: </h3> {{ evento.nota_evento|rating }}
+                                          <h3>Descrição do evento:</h3>
+                                          <p>{{ evento.descricao_evento }}</p>
+                                        <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
+                                         class="btn btn-primary" role="button">Veja mais...</a>
+                                           <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                                      </div>
+                                  {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
             {% endif %}
 <!--
     <ul>
