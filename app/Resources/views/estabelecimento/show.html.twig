@@ -84,9 +84,8 @@
                             <img alt="{{ evento.nome_evento }}" src="{{ evento.img_evento }}" />
                             <div class="info">
                                 <h2 class="title">{{ evento.nome_evento }}</h2>
-                                <p class="desc">{{ evento.descricao_evento }}</p>
+                                <p class="desc"><b>Nota:</b> {{ evento.nota_evento|rating }}</p>
                             </div>
-                            <li style="width:33%;">{{ evento.nota_evento|rating }}</li>
                         </li>
                     </ul>
                 </div>
