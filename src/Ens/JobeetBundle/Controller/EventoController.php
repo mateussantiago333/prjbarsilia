@@ -25,7 +25,7 @@ class EventoController extends Controller
                                             ev.descricao_evento, ev.img_evento,
                                             ev.data_evento, e.nome_estabelecimento
                                     FROM EnsJobeetBundle:Estabelecimento e
-                                    LEFT JOIN e.evento ev
+                                    JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
                                     GROUP BY ev.id,e.id ORDER BY ev.data_evento,nota_evento DESC');
         $eventos = $query_eventos->getResult();
