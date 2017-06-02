@@ -54,23 +54,27 @@
                         <div class="entry-content">
                             <div class="excerpt">
                                  <div class="row">
-                                {% for evento in eventos %}
-                                  <div class="col-sm-6 col-md-4">
-                                    <div class="thumbnail">
-                                      <img src="{{ evento.img_evento }}" alt="ICON">
-                                      <div class="caption">
-                                        <h3>{{ evento.nome_evento }}</h3>
-                                          <b>Data:</b>{% if evento.data_evento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}<br/>
-                                          <b>Nota média: </b> {{ evento.nota_evento|rating }}
-                                          <b>Comentários: </b>{{ evento.qtd_notas }}<br/>
-                                          <p>{{ evento.descricao_evento }}</p>
-                                        <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
-                                         class="btn btn-primary" role="button">Veja mais...</a>
-                                           <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
-                                      </div>
+                                    {% for evento in eventos %}
+                                    <div class="card hovercard">
+                                       <img src="{{ evento.img_evento }}" alt="" width="300" height="200" />
+                                       <div class="avatar">
+                                          <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+                                       </div>
+                                       <div class="info">
+                                          <div class="title">
+                                             {{ evento.nome_evento }}
+                                          </div>
+                                          <div class="desc"><b>Data:</b>{% if evento.data_evento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</div>
+                                          <div class="desc"><b>Nota média: </b> {{ evento.nota_evento|rating }}</div>
+                                          <div class="desc"><b>Comentários: </b>{{ evento.qtd_notas }}</div>
+                                       </div>
+                                       <div class="bottom">
+                                          <button class="btn btn-default">Button</button>
+                                          <a href="{{ path('evento_show', { 'id': evento.id }) }}"
+                                             class="btn btn-default" role="button">Veja mais...</a>
+                                       </div>
                                     </div>
-                                  </div>
-                                  {% endfor %}
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
