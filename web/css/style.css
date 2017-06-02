@@ -670,4 +670,9 @@ label.star:before {
       width: 40px;
       padding: 10px 0px 9px;
     }
-  }
+  h2.title {
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #bb1717;
+}
