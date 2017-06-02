@@ -43,6 +43,35 @@
                 <h2>Descrição</h2>
                 <p>{{ estabelecimento.descricao }}</p>
 
+                <!--EVENTOS DESTE ESTABELECIMENTO-->
+                            {% if estabelecimento.evento is not empty %}
+                                <div class="row">
+                                    <h1>Eventos deste estabelecimento</h1>
+                                    {% for evento in eventos %}
+                                    <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+                                        <ul class="event-list">
+                                            <li>
+                                                <time datetime="{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}">
+                                                    <span class="day">{% if evento.data_evento %}{{ evento.data_evento|date('d') }}{% endif %}</span>
+                                                    <span class="month">{% if evento.data_evento %}{{ evento.data_evento|date('F') }}{% endif %}</span>
+                                                    <span class="year">{% if evento.data_evento %}{{ evento.data_evento|date('Y') }}{% endif %}</span>
+                                                    <span class="time">{% if evento.data_evento %}{{ evento.data_evento|date('H:i:s') }}{% endif %}</span>
+                                                </time>
+                                                <img alt="{{ evento.nome_evento }}" src="{{ evento.img_evento }}" />
+                                                <div class="info">
+                                                    <a href="{{ path('evento_show', { 'id': evento.id }) }}">
+                                                        <h2 class="title">{{ evento.nome_evento }}</h2>
+                                                    </a>
+                                                    <p class="desc"><b>Nota:</b> {{ evento.nota_evento|rating }}</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                <!-------------------------------------------->
+
                 <div id="create_comment">
                 <h1>Adicione o seu comentário</h1>
                     {{ form_start(form) }}
@@ -69,31 +98,6 @@
                 </div>
                 {% endif %}
 
-            {% if estabelecimento.evento is not empty %}
-            <div class="row">
-                {% for evento in eventos %}
-                <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-                    <ul class="event-list">
-                        <li>
-                            <time datetime="{% if evento.data_evento %}{{ evento.data_evento|date('d-m-Y H:i:s') }}{% endif %}">
-                                <span class="day">{% if evento.data_evento %}{{ evento.data_evento|date('d') }}{% endif %}</span>
-                                <span class="month">{% if evento.data_evento %}{{ evento.data_evento|date('F') }}{% endif %}</span>
-                                <span class="year">{% if evento.data_evento %}{{ evento.data_evento|date('Y') }}{% endif %}</span>
-                                <span class="time">{% if evento.data_evento %}{{ evento.data_evento|date('H:i:s') }}{% endif %}</span>
-                            </time>
-                            <img alt="{{ evento.nome_evento }}" src="{{ evento.img_evento }}" />
-                            <div class="info">
-                                <a href="{{ path('evento_show', { 'id': evento.id }) }}">
-                                    <h2 class="title">{{ evento.nome_evento }}</h2>
-                                </a>
-                                <p class="desc"><b>Nota:</b> {{ evento.nota_evento|rating }}</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %}
 <!--
     <ul>
         <li>
