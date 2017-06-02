@@ -18,10 +18,10 @@
         {% for evento in eventos %}
             <tr>
                 <td><a href="{{ path('evento_show', { 'id': evento.id }) }}">{{ evento.id }}</a></td>
-                <td>{{ evento.nomeevento }}</td>
-                <td>{{ evento.imgevento }}</td>
-                <td>{% if evento.dataevento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ evento.descricaoevento }}</td>
+                <td>{{ evento.nome_evento }}</td>
+                <td>{{ evento.img_evento }}</td>
+                <td>{% if evento.data_evento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ evento.descricao_evento }}</td>
                 <td>
                     <ul>
                         <li>
