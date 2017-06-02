@@ -83,7 +83,9 @@
                             </time>
                             <img alt="{{ evento.nome_evento }}" src="{{ evento.img_evento }}" />
                             <div class="info">
-                                <h2 class="title">{{ evento.nome_evento }}</h2>
+                                <a href="{{ path('evento_show', { 'id': evento.id }) }}">
+                                    <h2 class="title">{{ evento.nome_evento }}</h2>
+                                </a>
                                 <p class="desc"><b>Nota:</b> {{ evento.nota_evento|rating }}</p>
                             </div>
                         </li>
