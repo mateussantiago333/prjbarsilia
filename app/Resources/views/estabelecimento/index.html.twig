@@ -42,13 +42,13 @@
             </div>
 
 
-        <section id="container">
+        <div class="container">
             <div class="row">
             <div class="well">
                 <h1 class="text-center">Estabelecimentos cadastrados</h1>
                 <div class="list-group">
                 {% for estabelecimento in estabelecimentos %}
-                  <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}" class="list-group-item active">
+                  <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}" class="list-group-item">
                         <div class="media col-md-3">
                             <figure class="pull-left">
                                 <img class="media-object img-rounded img-responsive"  src="{{ estabelecimento.url_img }}" alt="{{ estabelecimento.url_img }}" >
@@ -74,6 +74,6 @@
                 </div>
                 </div>
           </div>
-        </section>
+        </div>
 </div>
 {% endblock %}
