@@ -307,6 +307,9 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
 .estabelecimentos_main .panel-primary{
   margin: 10px 300px 10px 300px; 
 }
+.estabelecimento{
+  margin-top: 60px;
+}
 .panel-danger table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
