@@ -716,7 +716,7 @@ label.star:before {
 
 .card.hovercard {
   position: relative;
-  width: 270px;
+  width: 240px;
   padding-top: 0;
   overflow: hidden;
   text-align: center;
@@ -750,7 +750,7 @@ label.star:before {
 
 .card.hovercard .info .title {
   margin-bottom: 4px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   color: #262626;
   vertical-align: middle;
@@ -758,7 +758,7 @@ label.star:before {
 
 .card.hovercard .info .desc {
   overflow: hidden;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 20px;
   color: #737373;
   text-overflow: ellipsis;
