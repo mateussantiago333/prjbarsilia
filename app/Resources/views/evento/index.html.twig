@@ -12,6 +12,7 @@
                 <th>Data_evento</th>
                 <th>Descricao_evento</th>
                 <th>Actions</th>
+                <th>Estabelecimento</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                 <td>{{ evento.img_evento }}</td>
                 <td>{% if evento.data_evento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ evento.descricao_evento }}</td>
+                <td>{{ evento.nome_estabelecimento }}</td>
                 <td>
                     <ul>
                         <li>
