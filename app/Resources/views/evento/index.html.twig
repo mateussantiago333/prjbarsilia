@@ -55,6 +55,7 @@
                             <div class="excerpt">
                                  <div class="row">
                                     {% for evento in eventos %}
+                                    <div class="col-sm-6 col-md-4">
                                     <div class="card hovercard">
                                        <img src="{{ evento.img_evento }}" alt="" width="300" height="200" />
                                        <div class="avatar">
@@ -73,6 +74,7 @@
                                           <a href="{{ path('evento_show', { 'id': evento.id }) }}"
                                              class="btn btn-default" role="button">Veja mais...</a>
                                        </div>
+                                    </div>
                                     </div>
                                     {% endfor %}
                                 </div>
