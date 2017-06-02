@@ -86,8 +86,8 @@
                                 <h2 class="title">{{ evento.nome_evento }}</h2>
                                 <p class="desc">{{ evento.descricao_evento }}</p>
                             </div>
+                            <li style="width:33%;">{{ evento.nota_evento|rating }}</li>
                         </li>
-                        <li style="width:33%;">{{ evento.nota_evento|rating }}</li>
                     </ul>
                 </div>
                 {% endfor %}
