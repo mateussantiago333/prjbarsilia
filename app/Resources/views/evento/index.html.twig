@@ -1,47 +1,83 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block body %}
-    <h1>Eventos list</h1>
+{% block content %}
+  <div class = "index_list">
+    <div class="col-xs-8 col-xs-offset-2">
+             <div class = "filters">
+                <form action="#" method="get" id="searchForm" class="input-group">                  
+                    <div class="input-group-btn search-panel">
+                        <select name="search_cidade" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <option value="">Por cidade</option>
+                            <option value="Asa Norte">Asa Norte</option>
+                            <option value="Asa Sul">Asa Sul</option>
+                            <option value="Gama">Gama</option>
+                            <option value="Taguatinga">Taguatinga</option>
+                            <option value="Brazlândia">Brazlândia</option>
+                            <option value="Sobradinho">Sobradinho</option>
+                            <option value="Planaltina">Planaltina</option>
+                            <option value="Paranoá">Paranoá</option>
+                            <option value="Núcleo Bandeirante">Núcleo Bandeirante</option>
+                            <option value="Cruzeiro">Cruzeiro</option>
+                            <option value="Guará">Guará</option>
+                            <option value="Lago Sul">Lago Sul</option>
+                            <option value="Lago Norte">Lago Norte</option>
+                            <option value="Águas Claras">Águas Claras</option>
+                        </select>
+                        <select name="search_tipo" id="search_param" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <option value="">Por tipo</option>
+                            <option value="Bar">Bar</option>
+                            <option value="Restaurante">Restaurante</option>
+                            <option value="Buteco">Buteco</option>
+                            <option value="Boate">Boate</option>
+                        </select>
+                    </div>
+                    <input type="text" class="form-control" name="search_all" placeholder="Busque algo...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                           Filtrar
+                        </button>
+                    </span>
+                </form><!-- end form -->     
+              </div>
+            </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome_evento</th>
-                <th>Img_evento</th>
-                <th>Data_evento</th>
-                <th>Descricao_evento</th>
-                <th>Actions</th>
-                <th>Estabelecimento</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for evento in eventos %}
-            <tr>
-                <td><a href="{{ path('evento_show', { 'id': evento.id }) }}">{{ evento.id }}</a></td>
-                <td>{{ evento.nome_evento }}</td>
-                <td>{{ evento.img_evento }}</td>
-                <td>{% if evento.data_evento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ evento.descricao_evento }}</td>
-                <td>{{ evento.nome_estabelecimento }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('evento_show', { 'id': evento.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('evento_edit', { 'id': evento.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('evento_new') }}">Create a new evento</a>
-        </li>
-    </ul>
+        <section id="container">
+
+            <div class="wrap-container">
+                <!-----------------Content-Box-------------------->
+                <article class="single-post zerogrid">
+                    <div class="row wrap-post"><!--Start Box-->
+                        <div class="entry-header">
+                            <h1 class="entry-title">Eventos cadastrados</h1>
+                        </div>
+                        <div class="entry-content">
+                            <div class="excerpt">
+                                 <div class="row">
+                                {% for evento in eventos %}
+                                  <div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                      <img src="{{ evento.img_evento }}" alt="ICON">
+                                      <div class="caption">
+                                        <h3>{{ evento.nome_evento }}</h3>
+                                          <b>Data:</b>{% if evento.data_evento %}{{ evento.dataevento|date('Y-m-d H:i:s') }}{% endif %}<br/>
+                                          <b>Tipo: </b>{{ estabelecimento.tipo_estabelecimento }}<br/>
+                                          <b>Nota média: </b> {{ evento.nota_evento|rating }}
+                                          <b>Comentários: </b>{{ evento.qtd_notas }}<br/>
+                                          <p>{{ evento.descricao_evento }}</p>
+                                        <p><a href="{{ path('evento_show', { 'id': evento.id }) }}"
+                                         class="btn btn-primary" role="button">Veja mais...</a>
+                                           <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+</div>
 {% endblock %}
