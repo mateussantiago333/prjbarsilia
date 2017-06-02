@@ -57,9 +57,7 @@
                                     {% for evento in eventos %}
                                     <div class="col-sm-6 col-md-4">
                                     <div class="card hovercard">
-                                     <a href="{{ path('estabelecimento_show', { 'id': evento.estabelecimento_id }) }}">
                                        <img src="{{ evento.img_evento }}" alt="" width="300" height="200" />
-                                     </a>
                                        <div class="avatar">
                                           <img src="{{ evento.url_img }}" alt="" width="80" height="80"/>
                                        </div>
