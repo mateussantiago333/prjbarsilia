@@ -23,7 +23,8 @@ class EventoController extends Controller
         $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
                                             AVG(c.nota) as nota_evento,COUNT(c.nota) as qtd_notas,
                                             ev.descricao_evento, ev.img_evento,
-                                            ev.data_evento, e.nome_estabelecimento,e.url_img
+                                            ev.data_evento, e.nome_estabelecimento,e.url_img,
+                                            e.id as "estabelecimento_id"
                                     FROM EnsJobeetBundle:Estabelecimento e
                                     JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
