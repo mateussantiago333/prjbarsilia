@@ -71,6 +71,7 @@
 
             {% if estabelecimento.evento is not empty %}
             <div class="row">
+                {% for evento in eventos %}
                 <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
                     <ul class="event-list">
                         <li>
@@ -91,6 +92,7 @@
                         </li>
                     </ul>
                 </div>
+                {% endfor %}
             </div>
             {% endif %}
 <!--
