@@ -701,3 +701,11 @@ label.star:before {
   .well{
     margin-top: 90px;
   }
+  .media-object .img-rounded .img-responsive{
+    width: 350px;
+    height: 250px;
+    max-height: 250px;
+    min-height: 250px;
+    max-width: 350px;
+    min-width: 350px;
+  }
