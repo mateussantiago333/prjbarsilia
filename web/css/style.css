@@ -698,3 +698,6 @@ label.star:before {
   .stars {
       margin:20px auto 1px;    
   }
+  .well{
+    margin-top: 90px;
+  }
