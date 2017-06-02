@@ -21,7 +21,7 @@ class EventoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
-                                            AVG(c.nota) as nota_evento,
+                                            AVG(c.nota) as nota_evento,COUNT(c.nota) as qtd_notas,
                                             ev.descricao_evento, ev.img_evento,
                                             ev.data_evento, e.nome_estabelecimento
                                     FROM EnsJobeetBundle:Estabelecimento e
