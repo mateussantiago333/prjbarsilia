@@ -672,3 +672,11 @@ label.star:before {
     font-weight: bold;
     color: #bb1717;
 }
+
+  .title_event {
+      color: #b75602;
+  }
+
+  h1.title_event{
+    font-size:20px;
+  }
