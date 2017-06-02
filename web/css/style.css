@@ -680,3 +680,7 @@ label.star:before {
   h1.title_event{
     font-size:20px;
   }
+
+  .entry-estab{
+    margin-top: -15px;
+  }
