@@ -670,8 +670,8 @@ label.star:before {
       width: 40px;
       padding: 10px 0px 9px;
     }
-    .info .title h2,a{
-      font-size: 15px;
+    .info .title a > h2{
+      font-size: 14px;
       font-weight: bold;
     }
   }
