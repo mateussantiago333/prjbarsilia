@@ -63,6 +63,7 @@
                                           <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
                                           <b>Tipo: </b>{{ estabelecimento.tipo_estabelecimento }}<br/>
                                           <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
+                                          <b>Quantidade de avaliações: </b> {{ estabelecimento.qtd_notas }}
                                           <p>{{ estabelecimento.descricao }}</p>
                                         <p><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
                                          class="btn btn-primary" role="button">Veja mais...</a>
