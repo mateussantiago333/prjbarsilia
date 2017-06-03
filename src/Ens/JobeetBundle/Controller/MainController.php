@@ -23,7 +23,8 @@ class MainController extends Controller
             	e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
             						   e.descricao, e.url_img,e.cidade
             	 FROM EnsJobeetBundle:Estabelecimento e 
-            	 LEFT JOIN e.comentario c 
+            	 LEFT JOIN e.comentario c
+                 WHERE nota_media NOT NULL
             	 GROUP BY e.id ORDER BY nota_media DESC'))->setMaxResults(3);
         $estabelecimentos = $query->getResult();
     	//shuffle($estabelecimentos);
