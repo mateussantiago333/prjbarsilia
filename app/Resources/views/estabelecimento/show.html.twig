@@ -17,7 +17,7 @@
     <div class="entry-estab">
     <div class="entry-content">
         <div class="excerpt">        
-                <h2>Endereco</h2>
+                <h2>Endereço</h2>
                 <p>{{ estabelecimento.endereco }}</p>
 
                 <h2>Cidade</h2>
@@ -28,14 +28,16 @@
                 <p>{{ estabelecimento.tipoestabelecimento }}</p>
             
             
-            
+                {% if estabelecimento.email is not empty %}
                 <h2>Email</h2>
                 <p>{{ estabelecimento.email }}</p>
+            	{% endif %}
+
             
-            
+                {% if estabelecimento.cnpj is not empty %}
                 <h2>Cnpj</h2>
                 <p>{{ estabelecimento.cnpj }}</p>
-            
+            	{% endif %}
             
                 <h2>Telefone</h2>
                 <p>{{ estabelecimento.telefone }}</p>
