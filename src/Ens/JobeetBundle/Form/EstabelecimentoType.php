@@ -20,7 +20,9 @@ class EstabelecimentoType extends AbstractType
         'Bar' => 'Bar',
         'Restaurante' => 'Restaurante',
         'Buteco' => 'Buteco',
-        'Boate' => 'Boate'
+        'Boate' => 'Boate',
+        'Chopperia' => 'Chopperia',
+        'Casa de shows' => 'Casa de shows'
     ),
     ));
         $builder->add('endereco',null,array('label' => 'Endereço:'));
