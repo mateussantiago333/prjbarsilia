@@ -41,7 +41,11 @@ class EstabelecimentoType extends AbstractType
         'Guará' => 'Guará',
         'Lago Sul' => 'Lago Sul',
         'Lago Norte' => 'Lago Norte', 
-        'Águas Claras' => 'Águas Claras'
+        'Águas Claras' => 'Águas Claras',
+        'Park Way' => 'Park Way',
+        'Samambaia' => 'Samambaia',
+        'Ceilândia' => 'Ceilândia',
+
     ),));
         $builder->add('email');
         $builder->add('cnpj');
