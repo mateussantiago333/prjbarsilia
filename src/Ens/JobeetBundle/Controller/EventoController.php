@@ -17,9 +17,27 @@ class EventoController extends Controller
      * Lists all evento entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $all = $request->get('search_all');
         $em = $this->getDoctrine()->getManager();
+
+        if (!empty($all)) {
+        $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
+                                            AVG(c.nota) as nota_evento,COUNT(c.nota) as qtd_notas,
+                                            ev.descricao_evento, ev.img_evento,
+                                            ev.data_evento, e.nome_estabelecimento,e.url_img
+                                    FROM EnsJobeetBundle:Estabelecimento e
+                                    JOIN e.evento ev
+                                    LEFT JOIN ev.comentario_evento c
+                                            WHERE UPPER(ev.nome_evento) LIKE UPPER(:all) OR
+                                                  UPPER(e.nome_estabelecimento) LIKE UPPER(:all) OR
+                                                  UPPER(ev.descricao_evento) LIKE UPPER(:all)
+                                    GROUP BY ev.id,e.id ORDER BY ev.data_evento,nota_evento DESC')
+                                    ->setParameter('all', '%'.$all.'%');
+            $eventos = $query_eventos->getResult();
+        }
+        else{
         $query_eventos = $em->createQuery('SELECT e.id,ev.id,ev.nome_evento,
                                             AVG(c.nota) as nota_evento,COUNT(c.nota) as qtd_notas,
                                             ev.descricao_evento, ev.img_evento,
@@ -28,8 +46,8 @@ class EventoController extends Controller
                                     JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
                                     GROUP BY ev.id,e.id ORDER BY ev.data_evento,nota_evento DESC');
-        $eventos = $query_eventos->getResult();
-
+            $eventos = $query_eventos->getResult();
+        }
         //$eventos = $em->getRepository('EnsJobeetBundle:Evento')->findAll();
 
         return $this->render('evento/index.html.twig', array(
