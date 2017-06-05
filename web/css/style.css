@@ -282,7 +282,9 @@ img.media-object.img-rounded.img-responsive {
 a.list-group-item .list-group-item-heading, button.list-group-item .list-group-item-heading {
     color: #b90000;
 }
-
+.well{
+  margin-top: 55px;
+}
 a.list-group-item {
     height: 230px;
     font-size: 19px;
