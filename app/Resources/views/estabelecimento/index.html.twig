@@ -93,6 +93,7 @@
     <div class="well">
         <h1 class="text-center">Vote for your favorite</h1>
         <div class="list-group">
+          {% for estabelecimento in estabelecimentos %}
           <a href="#" class="list-group-item">
                 <div class="media col-md-3">
                     <figure class="pull-left">
@@ -118,6 +119,7 @@
                     <p> Average 3.9 <small> / </small> 5 </p>
                 </div>
           </a>
+          {% endfor %}
         </div>
         </div>
   </div>
