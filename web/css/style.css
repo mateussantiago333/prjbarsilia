@@ -360,6 +360,7 @@ a.list-group-item {
 .thumbnail img{
   width: 212px;
   height: 170px;
+  margin-top: 10px;
 }
 
 .eventos_estabelecimento .thumbnail .caption{
