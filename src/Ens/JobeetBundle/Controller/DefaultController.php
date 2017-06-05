@@ -23,7 +23,7 @@ class DefaultController extends Controller
             						   e.descricao, e.url_img,e.cidade
             	 FROM EnsJobeetBundle:Estabelecimento e 
             	 LEFT JOIN e.comentario c 
-            	 GROUP BY e.id'))->setMaxResults(3);
+            	 GROUP BY e.id ORDER BY RAND()'))->setMaxResults(3);
         $estabelecimentos = $query->getResult();
     	shuffle($estabelecimentos);
 
