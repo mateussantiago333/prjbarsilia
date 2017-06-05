@@ -24,9 +24,9 @@ class MainController extends Controller
             						   e.descricao, e.url_img,e.cidade
             	 FROM EnsJobeetBundle:Estabelecimento e 
             	 LEFT JOIN e.comentario c
-            	 GROUP BY e.id ORDER BY nota_media DESC'))->setMaxResults(3);
+            	 GROUP BY e.id'))->setMaxResults(3);
         $estabelecimentos = $query->getResult();
-    	//shuffle($estabelecimentos);
+    	shuffle($estabelecimentos);
 
 		return $this->render('main/main.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
