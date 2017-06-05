@@ -273,6 +273,12 @@ footer .bottom-social i.fa{font-size: 24px;margin-right: 12px;}
   }
 
 /*------------CUSTOMIZAÇÃO ---------------*/
+img.media-object.img-rounded.img-responsive {
+    padding-bottom: 10px;
+    width: 250px;
+    height: 200px;
+}
+
 .btn .btn-default{
   margin-left: 10px;
 }
