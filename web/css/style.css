@@ -352,6 +352,8 @@ a.list-group-item {
 .thumbnail{
    width:228.99; /* or whatever width you want. */
    max-width:228.99; /* or whatever width you want. */
+   height: 400px;
+   margin: 10px 10px 0px 10px;
    display: inline-block;
    margin-bottom: 30px;
 }
