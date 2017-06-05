@@ -102,7 +102,7 @@
                      {{ estabelecimento.descricao }}</p>
                 </div>
                 <div class="col-md-3 text-center">
-                    <h4> Média de votos: {{ estabelecimento.qtd_notas }}</h4>
+                    <h4> Média de votos: {{ estabelecimento.nota_media|rating }}</h4>
                     <h4> {{ estabelecimento.qtd_notas }} votos</h4>
                     <button type="button" class="btn btn-primary btn-lg btn-block">Vote agora!</button>
                     <!--<div class="stars">
