@@ -33,10 +33,4 @@ class MainController extends Controller
             'estabelecimentos' => $estabelecimentos,
         ));
     }
-
-        public function aboutAction()
-    {
-        return $this->render('main/about.html.twig'
-        ));
-    }
 }

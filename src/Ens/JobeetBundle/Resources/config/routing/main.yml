@@ -2,8 +2,3 @@ main_index:
     path:     /
     defaults: { _controller: "EnsJobeetBundle:Main:index" }
     methods:  GET
-
-main_about:
-    path:     /about
-    defaults: { _controller: "EnsJobeetBundle:Main:about" }
-    methods:  GET
