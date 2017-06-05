@@ -445,7 +445,8 @@ a.list-group-item {
   width: 700px;
 }
 .filters{
-  margin-left: -30px;
+  margin-left: -100px;
+  margin-right: 30px;
 }
 .filter{
   float:middle;
