@@ -22,7 +22,3 @@ ens_jobeet_comentario_evento:
         resource: "@EnsJobeetBundle/Resources/config/routing/comentario_evento.yml"
         prefix:   /comentario_evento
 
-ens_jobeet_about:
-    resource: "@EnsJobeetBundle/Resources/config/routing/about.yml"
-    prefix:   /about
-
