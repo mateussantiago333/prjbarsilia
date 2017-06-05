@@ -26,8 +26,7 @@ class MainController extends Controller
             	 LEFT JOIN e.comentario c
             	 GROUP BY e.id ORDER BY nota_media DESC'))->setMaxResults(3);
         $estabelecimentos = $query->getResult();
-    	//shuffle($estabelecimentos);
-
+        
 		return $this->render('main/main.html.twig', array(
             'estabelecimentos' => $estabelecimentos,
         ));
