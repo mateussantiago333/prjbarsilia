@@ -33,7 +33,7 @@ class EstabelecimentoController extends Controller
         e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade,COUNT(c.texto_comentario) as qtd_notas
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
         WHERE e.cidade = :cidade AND e.tipo_estabelecimento = :tipo
-         GROUP BY e.id ORDER BY nota_media DESC')
+         GROUP BY e.id ORDER BY e.nome_estabelecimento')
         ->setParameter('cidade', $cidade)->setParameter('tipo', $tipo);
         $estabelecimentos = $query_filter->getResult();
     }elseif (!empty($tipo)) {
@@ -41,7 +41,7 @@ class EstabelecimentoController extends Controller
         e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade,COUNT(c.texto_comentario) as qtd_notas
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
         WHERE e.tipo_estabelecimento = :tipo
-         GROUP BY e.id ORDER BY nota_media DESC')
+         GROUP BY e.id ORDER BY e.nome_estabelecimento')
         ->setParameter('tipo', $tipo);
         $estabelecimentos = $query_filter->getResult();
     }elseif (!empty($all)) {
@@ -52,7 +52,7 @@ class EstabelecimentoController extends Controller
               UPPER(e.nome_estabelecimento) LIKE UPPER(:all) OR
               UPPER(e.descricao) LIKE UPPER(:all) OR
               UPPER(e.cidade) LIKE UPPER(:all)
-         GROUP BY e.id ORDER BY nota_media DESC')
+         GROUP BY e.id ORDER BY e.nome_estabelecimento')
         ->setParameter('all', '%'.$all.'%');
         $estabelecimentos = $query_filter->getResult();
     }elseif (!empty($cidade)) {
@@ -60,13 +60,13 @@ class EstabelecimentoController extends Controller
         e.descricao,e.tipo_estabelecimento, e.url_img,e.cidade,COUNT(c.texto_comentario) as qtd_notas
          FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c 
         WHERE e.cidade = :cidade
-         GROUP BY e.id ORDER BY nota_media DESC')
+         GROUP BY e.id ORDER BY e.nome_estabelecimento')
         ->setParameter('cidade', $cidade);
         $estabelecimentos = $query_filter->getResult();
     }else{
         //$estabelecimentos = $em->getRepository('EnsJobeetBundle:Estabelecimento')->findAll();
         $query = $em->createQuery('SELECT e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
-                e.descricao, e.url_img,e.cidade,e.tipo_estabelecimento,COUNT(c.texto_comentario) as qtd_notas FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c GROUP BY e.id ORDER BY nota_media DESC');
+                e.descricao, e.url_img,e.cidade,e.tipo_estabelecimento,COUNT(c.texto_comentario) as qtd_notas FROM EnsJobeetBundle:Estabelecimento e LEFT JOIN e.comentario c GROUP BY e.id ORDER BY e.nome_estabelecimento');
         $estabelecimentos = $query->getResult();
     }
     //--------------------------------------------------------------
