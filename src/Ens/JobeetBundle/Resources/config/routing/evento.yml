@@ -22,3 +22,8 @@ evento_delete:
     path:     /{id}/delete
     defaults: { _controller: "EnsJobeetBundle:Evento:delete" }
     methods:  DELETE
+
+evento_show_comments:
+    path:     /show_comments
+    defaults: { _controller: "EnsJobeetBundle:Evento:show_comments" }
+    methods:  [GET, POST]

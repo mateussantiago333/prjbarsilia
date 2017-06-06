@@ -6,6 +6,10 @@ ens_jobeet_main:
     resource: "@EnsJobeetBundle/Resources/config/routing/main.yml"
     prefix:   /main
 
+ens_jobeet_about:
+    resource: "@EnsJobeetBundle/Resources/config/routing/about.yml"
+    prefix:   /about
+
 ens_jobeet_estabelecimento:
     resource: "@EnsJobeetBundle/Resources/config/routing/estabelecimento.yml"
     prefix:   /estabelecimento
