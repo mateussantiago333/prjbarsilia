@@ -413,6 +413,11 @@ p.list-group-item-text {
     margin-bottom: 30px;
 }
 
+.text-center {
+    text-align: center;
+    color: #b90000;
+}
+
 .img_estab{
   width: 270;
   height: 145;
