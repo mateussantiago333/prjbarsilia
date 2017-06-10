@@ -321,7 +321,7 @@ a.list-group-item {
 }*/
 
 
-.estabelecimentos_main .panel-primary{
+.estabelecimentos_main .panel-default{
   margin: 10px 300px 10px 300px; 
 }
 .estabelecimento{
@@ -350,7 +350,7 @@ p.list-group-item-text {
     -webkit-box-orient: vertical;
 }
 
-.estabelecimentos_main .panel-primary {
+.estabelecimentos_main .panel-default {
     margin: 10px 300px 10px 300px;
     width: 700px;
     height: 500px;
@@ -361,19 +361,19 @@ p.list-group-item-text {
     height: 440px;
 }
 
-.estabelecimentos_main .panel-primary {
+.estabelecimentos_main .panel-default {
     margin: 10px 300px 10px 300px;
     width: 700px;
     height: 500px;
 }
 /*Teste*/
-.panel-primary>.panel-heading {
+.panel-default>.panel-heading {
     color: #fff;
     background-color: #000000;
     border-color: #000000;
 }
 
-.panel-primary {
+.panel-default {
     border-color: #000000;
 }
 
