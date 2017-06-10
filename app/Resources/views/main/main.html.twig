@@ -98,16 +98,14 @@
 						</div>
 				</div>
 			</div>
-		</section>
-
-		<div class="container">
+			<div class="container">
 			<div class="panel panel-danger">
 			<div class="panel-heading">Top 4 Estabelecimentos:</div>
 		    <div class="row">
 		    	{% for estabelecimento in estabelecimentos %}
 		        <div class="col-md-3">
 		            <div class="contact-box center-version">
-		                <a href="">
+		                <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">
 		                    <img alt="image" class="img-circle" src="{{ estabelecimento.url_img }}">
 		                    <h3 class="m-b-xs"><strong>{{ estabelecimento.nome_estabelecimento }}</strong></h3>
 		        
@@ -131,6 +129,7 @@
 			</div>
 			</div>
 		</div>
+		</section>
 
 		<style>
 		.panel-danger>.panel-heading {
