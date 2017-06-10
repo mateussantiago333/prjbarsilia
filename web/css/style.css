@@ -366,6 +366,19 @@ p.list-group-item-text {
     width: 700px;
     height: 500px;
 }
+
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #0e0e0e;
+    border-color: #ddd;
+}
+
+.panel-default {
+    border-color: #000;
+    width: 780px;
+    height: 520px;
+    margin-left: 270px;
+}
 /*Teste*/
 .panel-default>.panel-heading {
     color: #fff;
