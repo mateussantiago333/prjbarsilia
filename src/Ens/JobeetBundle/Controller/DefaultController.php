@@ -17,10 +17,10 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery(
             ('SELECT 
                 e.id,e.nome_estabelecimento,AVG(c.nota) as nota_media,
-                                       e.descricao, e.url_img,e.cidade
+                                       e.descricao, e.url_img,e.cidade,
+                                       e.tipo_estabelecimento
                  FROM EnsJobeetBundle:Estabelecimento e 
                  LEFT JOIN e.comentario c 
                  WHERE c.nota IS NOT NULL
