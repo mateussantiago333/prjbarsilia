@@ -98,7 +98,7 @@
 						</div>
 						<div class="estabelecimentos_main"
 							<!--Estabelecimentos cadastrados randomizados -->
-							<div class="panel panel-default">
+							<div class="panel panel-primary">
 							  <!-- Default panel contents -->
 							  <div class="panel-heading">Estabelecimentos com melhor nota média:</div>
 							  <div class="row">
@@ -107,11 +107,13 @@
 					                    <div class="thumbnail">
 					                        <img src="{{ estabelecimento.url_img }}" alt="ICON">
 					                        <div class="caption">
-					                             <h3><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}">{{ estabelecimento.nome_estabelecimento }}</a></h3>
-					                             <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
-					                             <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
-					                             <p>{{ estabelecimento.descricao }}</p>
-					                                           <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
+		                                        <h3>{{ estabelecimento.nome_estabelecimento }}</h3>
+		                                          <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
+		                                          <b>Tipo: </b>{{ estabelecimento.tipo_estabelecimento }}<br/>
+		                                          <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
+		                                          <p>{{ estabelecimento.descricao }}</p>
+		                                        <p><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
+		                                         class="btn btn-primary" role="button">Veja mais...</a>
 					                        </div>
 					                    </div>
 					                </div>
