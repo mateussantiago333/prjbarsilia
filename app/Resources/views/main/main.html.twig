@@ -121,8 +121,7 @@
 		                </a>
 		                <div class="contact-box-footer">
 		                    <div class="m-t-xs btn-group">
-		                        <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
-		                                         class="btn btn-primary" role="button">Veja mais...</a>
+		                        <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}" class="btn btn-primary"><i class="fa-plus-square"></i>Veja mais...</a>
 		                    </div>
 		                </div>
 		            </div>
@@ -132,4 +131,15 @@
 			</div>
 			</div>
 		</div>
+
+		<style>
+		.panel-danger>.panel-heading {
+		    color: #ffffff;
+		    background-color: #000000;
+		    border-color: #000000;
+		}
+
+		.panel-danger {
+	    	border-color: #000000;
+		}
 {% endblock %}
