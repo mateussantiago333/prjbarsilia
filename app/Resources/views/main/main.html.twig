@@ -107,6 +107,7 @@
 		    	{% for estabelecimento in estabelecimentos %}
 		        <div class="col-md-3">
 		            <div class="contact-box center-version">
+		                <a href="">
 		                    <img alt="image" class="img-circle" src="{{ estabelecimento.url_img }}">
 		                    <h3 class="m-b-xs"><strong>{{ estabelecimento.nome_estabelecimento }}</strong></h3>
 		        
@@ -116,6 +117,8 @@
 		                        <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
 		                        <abbr title="Phone">Tel:</abbr> {{ estabelecimento.telefone }}
 		                    </address>
+		        
+		                </a>
 		                <div class="contact-box-footer">
 		                    <div class="m-t-xs btn-group">
 		                        <a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}" class="btn btn-primary"><i class="fa fa-plus-square"></i> Veja mais...</a>
