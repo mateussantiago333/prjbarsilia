@@ -96,28 +96,46 @@
 								</div>
 							</div>
 						</div>
-						<div class="estabelecimentos_main"
-							<!--Estabelecimentos cadastrados randomizados -->
-							<div class="panel panel-primary">
-							  <!-- Default panel contents -->
-							  <div class="panel-heading">Estabelecimentos com melhor nota média:</div>
-							  <div class="row">
-							    {% for estabelecimento in estabelecimentos %}
-                                  <div class="col-sm-6 col-md-4">
-                                    <div class="thumbnail">
-                                      <img src="{{ estabelecimento.url_img }}" alt="ICON">
-                                      <div class="caption">
-                                        <h3>{{ estabelecimento.nome_estabelecimento }}</h3>
-                                          <b>Cidade:</b> {{ estabelecimento.cidade }}<br/>
-                                          <!--<b>Tipo: </b>{{ estabelecimento.tipo_estabelecimento }}<br/>-->
-                                          <b>Nota média: </b> {{ estabelecimento.nota_media|rating }}
-                                          <p>{{ estabelecimento.descricao }}</p>
-                                        <p><a href="{{ path('estabelecimento_show', { 'id': estabelecimento.id }) }}"
-                                         class="btn btn-primary" role="button">Veja mais...</a>
-                                           <!--<a href="#" class="btn btn-default" role="button">Button</a></p>-->
-                                      </div>
-                                  </div>
+						<!--Top 3 Estabelecimentos -->
+						    <div class="row">
+						        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+						            <div class="panel panel-default">
+						                <div class="panel-heading c-list">
+						                    <span class="title">Top 3 Barsilia</span>
+						                    <ul class="pull-right c-controls">
+						                        <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
+						                    </ul>
+						                </div>
+						                
+						                <div class="row" style="display: none;">
+						                    <div class="col-xs-12">
+						                        <div class="input-group c-search">
+						                            <input type="text" class="form-control" id="contact-list-search">
+						                            <span class="input-group-btn">
+						                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
+						                            </span>
+						                        </div>
+						                    </div>
+						                </div>
+							    		{% for estabelecimento in estabelecimentos %}
+						                 <ul class="list-group" id="contact-list">
+						                    <li class="list-group-item">
+						                        <div class="col-xs-12 col-sm-3">
+						                            <img src="{{ estabelecimento.url_img }}" alt="Estab_img" class="img-responsive img-circle" />
+						                        </div>
+						                        <div class="col-xs-12 col-sm-9">
+						                            <span class="name">{{ estabelecimento.nome_estabelecimento }}</span><br/>
+						                            <span class="name">{{ estabelecimento.cidade }}</span><br/>
+						                            <span class="name">Tipo: {{ estabelecimento.tipo_estabelecimento }}</span><br/>
+						                            <span class="name">Nota: {{ estabelecimento.nota_media|rating }} </span><br/>
+						                        </div>
+						                        <div class="clearfix"></div>
+						                    </li>
+						                </ul>
 					            {% endfor %}
+					            </div>
+						        </div>
+							    </div>
 					          </div>
 							</div>
 						</div>
