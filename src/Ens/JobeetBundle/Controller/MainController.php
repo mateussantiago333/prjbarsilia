@@ -26,7 +26,7 @@ class MainController extends Controller
                  FROM EnsJobeetBundle:Estabelecimento e 
                  LEFT JOIN e.comentario c 
                  WHERE c.nota IS NOT NULL
-                 GROUP BY e.id ORDER BY nota_media DESC'))->setMaxResults(3);
+                 GROUP BY e.id ORDER BY nota_media DESC'))->setMaxResults(4);
         $estabelecimentos = $query->getResult();
         //shuffle($estabelecimentos);
 
