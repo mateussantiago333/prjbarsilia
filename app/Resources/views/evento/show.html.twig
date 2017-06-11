@@ -11,8 +11,9 @@
                 <div class="excerpt">
                 <br>
                 <h3>Nome do estabelecimento:</h3>
-                <abbr title="Clique para ir ao estabelecimento"><a href="{{ path('estabelecimento_show', { 'id': evento.estabelecimentos.getId() }) }}">
-                    <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
+                <abbr title="Clique para ir ao estabelecimento"><a class = "estabelecimento_evento" 
+                       href="{{ path('estabelecimento_show', { 'id': evento.estabelecimentos.getId() }) }}">
+                      <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
                 </a></abbr>
                 <h3>Data do evento</h3>
                 <p>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}</p>
@@ -66,6 +67,9 @@
     <style type="text/css">
     article.single-post{
         margin-top: -40px;
+    }
+    .estabelecimento_evento{
+        text-decoration: underline;
     }
     </style>
 {% endblock %}
