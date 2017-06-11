@@ -33,7 +33,7 @@ class EventoController extends Controller
                                             WHERE UPPER(ev.nome_evento) LIKE UPPER(:all) OR
                                                   UPPER(e.nome_estabelecimento) LIKE UPPER(:all) OR
                                                   UPPER(ev.descricao_evento) LIKE UPPER(:all)
-                                    GROUP BY ev.id,e.id ORDER BY ev.data_evento,nota_evento DESC')
+                                    GROUP BY ev.id,e.id ORDER BY ev.data_evento DESC')
                                     ->setParameter('all', '%'.$all.'%');
             $eventos = $query_eventos->getResult();
         }
@@ -45,7 +45,7 @@ class EventoController extends Controller
                                     FROM EnsJobeetBundle:Estabelecimento e
                                     JOIN e.evento ev
                                     LEFT JOIN ev.comentario_evento c
-                                    GROUP BY ev.id,e.id ORDER BY ev.data_evento,nota_evento DESC');
+                                    GROUP BY ev.id,e.id ORDER BY ev.data_evento DESC');
             $eventos = $query_eventos->getResult();
         }
         //$eventos = $em->getRepository('EnsJobeetBundle:Evento')->findAll();
