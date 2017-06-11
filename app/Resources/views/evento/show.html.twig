@@ -11,9 +11,9 @@
                 <div class="excerpt">
                 <br>
                 <h3>Nome do estabelecimento:</h3>
-                <a href="{{ path('estabelecimento_show', { 'id': evento.estabelecimentos.getId() }) }}">
+                <abbr title="Clique para ir ao estabelecimento"><a href="{{ path('estabelecimento_show', { 'id': evento.estabelecimentos.getId() }) }}">
                     <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
-                </a>
+                </a></abbr>
                 <h3>Data do evento</h3>
                 <p>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}</p>
 
