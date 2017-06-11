@@ -37,9 +37,9 @@
                                        </div>
                                        <div class="info">
                                           <div class="title">
-                                             {{ evento.nome_evento }}
+                                             {{ evento.nome_evento }}<br/>
+                                             {{ evento.nome_estabelecimento }}
                                           </div>
-                                          <div class="desc"><b>{{ evento.nome_estabelecimento }}</b></div>
                                           <div class="desc"><b>Data:</b>
                                             {% if evento.data_evento %}{{ evento.data_evento|date('d/m/Y H:i') }}{% endif %}</div>
                                           <div class="desc"><b>Nota média: </b> {{ evento.nota_evento|rating }}</div>
