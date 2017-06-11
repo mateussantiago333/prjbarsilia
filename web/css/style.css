@@ -397,6 +397,10 @@ p.list-group-item-text {
   margin-top: 10px;
 }
 
+.excerpt h2 {
+    color: #930000;
+}
+
 .eventos_estabelecimento .thumbnail .caption{
   padding: 10px 40px 10px 40px;
 }
