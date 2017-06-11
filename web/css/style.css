@@ -401,6 +401,10 @@ p.list-group-item-text {
     color: #930000;
 }
 
+.caption p, h3, body {
+    font-size: 20px;
+}
+
 .eventos_estabelecimento .thumbnail .caption{
   padding: 10px 40px 10px 40px;
 }
