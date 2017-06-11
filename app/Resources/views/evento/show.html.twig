@@ -9,14 +9,16 @@
             <img src="{{ evento.imgevento }}" id = "bar_img" class="img-responsive">
             <div class="entry-content">
                 <div class="excerpt">
+                <br>
+                <h3>Nome do estabelecimento:</h3>
+                <a href="{{ path('estabelecimento_show', { 'id': evento.estabelecimentos.getId() }) }}">
+                    <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
+                </a>
                 <h3>Data do evento</h3>
                 <p>{% if evento.dataevento %}{{ evento.dataevento|date('d-m-Y H:i:s') }}{% endif %}</p>
 
                 <h3>Descricao do evento</h3>
                 <p>{{ evento.descricaoevento }}</p>
-
-                <h3>Nome do estabelecimento:</h3>
-                <p> {{ evento.estabelecimentos.getNomeEstabelecimento() }} </p>
                 </div>
         </div>
         </div>
@@ -61,4 +63,9 @@
             {{ form_end(delete_form) }}
         </li>
     </ul> -->
+    <style type="text/css">
+    article.single-post{
+        margin-top: -40px;
+    }
+    </style>
 {% endblock %}
