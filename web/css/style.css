@@ -867,7 +867,7 @@ label.star:before {
   color: inherit;
 }
 .contact-box.center-version {
-  border: 1px solid #e7eaec;
+  border: 2px solid #101010;
   padding: 0;
 }
 .contact-box.center-version > a {
