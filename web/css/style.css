@@ -875,6 +875,7 @@ label.star:before {
   background-color: #ffffff;
   padding: 20px;
   text-align: center;
+  color: black;
 }
 .contact-box.center-version > a img {
   width: 200px;
