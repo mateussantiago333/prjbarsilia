@@ -19,7 +19,7 @@ class EstabelecimentoType extends AbstractType
         'choices'  => array(
         'Bar' => 'Bar',
         'Restaurante' => 'Restaurante',
-        'Buteco' => 'Buteco',
+        'Boteco' => 'Boteco',
         'Boate' => 'Boate',
         'Chopperia' => 'Chopperia',
         'Casa de shows' => 'Casa de shows'
