@@ -91,7 +91,8 @@
                     {% for comentario in estabelecimento.comentario %}
                             <table>
                                 <tr>
-                                <td><h2><b>Autor: </b>{{ comentario.autor }}</h2> <h2><b>Nota: </b>
+                                <td><h2><b>Autor(a): </b></h2>{{ comentario.autor }}
+                                 <h2><b>Nota: </b>
                                 {{ comentario.nota|rating }}</h2></td>
                                 </tr>
                                 <tr>
