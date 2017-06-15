@@ -16,7 +16,10 @@ class EventoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nome_evento');
-        $builder->add('img_evento');
+        $builder->add('img_evento',null,array(
+            'label' => 'URL da Imagem do evento:',
+            'attr' => array(
+            'placeholder' => 'Exemplo: http://i.imgur.com/vgxeAVf.png',)));
         $builder->add('data_evento',DateTimeType::class, array(
         'placeholder' => array(
         'year' => 'Ano', 'month' => 'Mês', 'day' => 'Dia',
