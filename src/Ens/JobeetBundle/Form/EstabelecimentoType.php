@@ -51,7 +51,8 @@ class EstabelecimentoType extends AbstractType
         $builder->add('cnpj');
         $builder->add('telefone');
         $builder->add('url_img',null,array('label' => 'URL da Imagem do estabelecimento:'));
-        $builder->add('descricao',null,array('label' => 'Descrição:','placeholder' => 'Choose an option',));
+        $builder->add('descricao',null,array('label' => 'Descrição:',
+            'attr' => array('placeholder' => 'monPlaceholder',)));
     }
     
     /**
