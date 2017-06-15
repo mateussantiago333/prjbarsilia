@@ -15,18 +15,19 @@ class EventoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nome_evento');
+        $builder->add('nome_evento',null,array('label' => 'Digite o nome do evento que ocorrerá'));
         $builder->add('img_evento',null,array(
             'label' => 'URL da Imagem do evento:',
             'attr' => array(
             'placeholder' => 'Exemplo: http://i.imgur.com/vgxeAVf.png',)));
         $builder->add('data_evento',DateTimeType::class, array(
+        'label' => 'Data em que ocorrerá o evento: ',
         'placeholder' => array(
         'year' => 'Ano', 'month' => 'Mês', 'day' => 'Dia',
         'hour' => 'Hora', 'minute' => 'Minuto'
     )
 ));;
-        $builder->add('descricao_evento');
+        $builder->add('descricao_evento',null,array('label' => 'Descrição do evento'));
         $builder->add('estabelecimentos',EntityType::class, array(
             'class' => 'EnsJobeetBundle:Estabelecimento',
             'choice_label' => 'nome_estabelecimento'));
