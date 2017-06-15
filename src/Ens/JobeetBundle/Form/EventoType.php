@@ -16,6 +16,10 @@ class EventoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nome_evento',null,array('label' => 'Digite o nome do evento que ocorrerá'));
+        $builder->add('estabelecimentos',EntityType::class, array(
+            'label' => 'Em qual estabelecimento ocorrerá?',
+            'class' => 'EnsJobeetBundle:Estabelecimento',
+            'choice_label' => 'nome_estabelecimento'));
         $builder->add('img_evento',null,array(
             'label' => 'URL da Imagem do evento:',
             'attr' => array(
@@ -28,9 +32,6 @@ class EventoType extends AbstractType
     )
 ));;
         $builder->add('descricao_evento',null,array('label' => 'Descrição do evento'));
-        $builder->add('estabelecimentos',EntityType::class, array(
-            'class' => 'EnsJobeetBundle:Estabelecimento',
-            'choice_label' => 'nome_estabelecimento'));
     }
     
     /**
