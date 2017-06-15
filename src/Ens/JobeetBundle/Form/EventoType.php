@@ -18,8 +18,6 @@ class EventoType extends AbstractType
         $builder->add('nome_evento',null,array('label' => 'Digite o nome do evento que ocorrerá'));
         $builder->add('estabelecimentos',EntityType::class, array(
             'label' => 'Em qual estabelecimento ocorrerá?',
-            'attr' => array(
-            'placeholder' => 'Selecione um estabelecimento',),
             'class' => 'EnsJobeetBundle:Estabelecimento',
             'choice_label' => 'nome_estabelecimento'));
         $builder->add('img_evento',null,array(
