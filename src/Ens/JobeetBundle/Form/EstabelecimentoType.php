@@ -52,8 +52,7 @@ class EstabelecimentoType extends AbstractType
         $builder->add('telefone');
         $builder->add('url_img',null,array('label' => 'URL da Imagem do estabelecimento:',
                                            'attr' => array('placeholder' => 'Exemplo: http://i.imgur.com/vgxeAVf.png',)));
-        $builder->add('descricao',null,array('label' => 'Descrição:',
-            'attr' => array('placeholder' => 'Descreva seu estabelecimento',)));
+        $builder->add('descricao',null,array('label' => 'Descrição:',));
     }
     
     /**
