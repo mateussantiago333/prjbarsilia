@@ -14,7 +14,9 @@ class EstabelecimentoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nome_estabelecimento',null,array('label' => 'Nome do estabelecimento:'));
+        $builder->add('nome_estabelecimento',null,
+                  array('label' => 'Nome do estabelecimento:',
+                        'empty_data' => 'John Doe'));
         $builder->add('tipo_estabelecimento', ChoiceType::class, array('label' => 'Tipo do estabelecimento:',
         'choices'  => array(
         'Bar' => 'Bar',
